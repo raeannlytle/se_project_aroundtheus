@@ -81,16 +81,16 @@
 
 .card__list {
 	display: grid;
-	list-style: none;
 	justify-content: center;
 	grid-template-columns: repeat(auto-fit, 282px);
-	grid-gap: 17px;
+	grid-gap: 17px 20px;
 }
 
 .card {
 	display: flex;
 	flex-direction: column;
 	border-radius: 10px;
+	list-style: none;
 }
 
 .card__image {
