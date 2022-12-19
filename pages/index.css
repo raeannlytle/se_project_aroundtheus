@@ -3,6 +3,7 @@
 .page {
 	background-color: black;
 	color: white;
+	font-family: "Inter", Arial, sans-serif;
 }
 
 .page__section {
@@ -48,6 +49,7 @@
 }
 
 .profile__title {
+	font-family: "Inter", Arial, sans-serif;
 	font-size: 42px;
 	line-height: 48px;
 	font-weight: 500;
@@ -63,6 +65,7 @@
 }
 
 .profile__description {
+	font-family: "Inter", Arial, sans-serif;
 	font-size: 18px;
 	line-height: 22px;
 	font-weight: 400;
@@ -78,6 +81,7 @@
 }
 
 .cards {
+	margin-top: 30px;
 	padding-left: 200px;
 	padding-right: 200px;
 	/* fonts */
@@ -105,6 +109,11 @@
 }
 
 .card__description {
+	font-family: "Inter", Arial, sans-serif;
+	font-style: normal;
+	font-size: 24px;
+	font-weight: 900;
+	line-height: 29px;
 	display: flex;
 	background-color: white;
 	color: black;
