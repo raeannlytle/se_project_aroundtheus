@@ -99,4 +99,13 @@
 	padding-top: 25px;
 	padding-bottom: 25px;
 	padding-left: 20px;
+	padding-right: 20px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.card__like-button {
+	background: transparent url(../images/like-inactive.svg) center no-repeat;
+	width: 21px;
+	height: 18px;
 }
