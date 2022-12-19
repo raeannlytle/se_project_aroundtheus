@@ -62,6 +62,7 @@
 	height: 24px;
 	width: 24px;
 	grid-area: button;
+	border: 1px solid white;
 }
 
 .profile__description {
@@ -78,6 +79,7 @@
 	height: 50px;
 	width: 150px;
 	margin-left: auto;
+	border: 1px solid white;
 }
 
 .cards {
@@ -99,8 +101,8 @@
 .card {
 	display: flex;
 	flex-direction: column;
-	border-radius: 10px;
 	list-style: none;
+	border-radius: 10px;
 }
 
 .card__image {
@@ -129,4 +131,5 @@
 	background: transparent url(../images/like-inactive.svg) center no-repeat;
 	width: 21px;
 	height: 18px;
+	border: none;
 }
