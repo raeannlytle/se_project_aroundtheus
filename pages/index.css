@@ -1,1 +1,31 @@
 @import url(../vendor/normalize.css);
+
+.page {
+	background-color: black;
+	color: white;
+}
+
+.page__content {
+	margin-left: 200px;
+	margin-right: 200px;
+}
+
+.header {
+	margin-top: 45px;
+	max-width: 880px;
+}
+.content {
+}
+
+.profile {
+	display: flex;
+}
+
+.profile__info {
+	display: grid;
+	grid-template-areas: "title button" "description description";
+}
+
+.profile__edit-button {
+	background: transparent url(../images/edit-icon.svg) center no-repeat;
+}
