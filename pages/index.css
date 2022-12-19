@@ -91,3 +91,12 @@
 	height: 282px;
 	width: 282px;
 }
+
+.card__description {
+	display: flex;
+	background-color: white;
+	color: black;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	padding-left: 20px;
+}
