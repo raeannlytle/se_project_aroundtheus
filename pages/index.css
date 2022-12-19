@@ -23,6 +23,15 @@
 	padding-top: 40px;
 }
 
+.profile__image {
+	height: 120px;
+	width: 120px;
+	border-radius: 50%;
+	object-fit: cover;
+	background-position: center;
+	margin-right: 24px;
+}
+
 .profile__info {
 	display: grid;
 	grid-template-areas: "title button" "description description";
@@ -56,4 +65,5 @@
 	background: transparent url(../images/add-icon.svg) center no-repeat;
 	height: 50px;
 	width: 150px;
+	margin-left: auto;
 }
