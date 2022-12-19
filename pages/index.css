@@ -5,14 +5,21 @@
 	color: white;
 }
 
+.page__section {
+	max-width: 880px;
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+}
+
 .page__content {
-	margin-left: 200px;
-	margin-right: 200px;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 .header {
 	margin-top: 45px;
-	max-width: 880px;
 }
 .content {
 }
@@ -66,4 +73,21 @@
 	height: 50px;
 	width: 150px;
 	margin-left: auto;
+}
+
+.cards {
+	/* fonts */
+}
+
+.card__list {
+	display: grid;
+	list-style: none;
+}
+
+.card {
+}
+
+.card__image {
+	height: 282px;
+	width: 282px;
 }
