@@ -58,23 +58,29 @@
 
 .profile__title {
 	font-size: 42px;
+	font-weight: 500;
 	grid-area: title;
-	flex-wrap: nowrap;
 	margin: 0;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .profile__edit-button {
 	background: transparent url(../images/edit-icon.svg) center no-repeat;
 	height: 24px;
 	width: 24px;
-	grid-area: button;
+	grid-template-areas: "button";
 	border: 1px solid white;
 }
 
 .profile__description {
 	font-size: 18px;
-	grid-area: description;
+	grid-template-areas: "description";
 	margin: 0;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .profile__add-button {
