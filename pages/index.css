@@ -1,9 +1,17 @@
 @import url(../vendor/normalize.css);
 
+:root {
+	font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+	:root {
+		font-family: "Inter var", sans-serif;
+	}
+}
+
 .page {
 	background-color: black;
 	color: white;
-	font-family: "Inter", Arial, sans-serif;
 }
 
 .page__section {
@@ -49,10 +57,7 @@
 }
 
 .profile__title {
-	font-family: "Inter", Arial, sans-serif;
 	font-size: 42px;
-	line-height: 48px;
-	font-weight: 500;
 	grid-area: title;
 	margin: 0;
 }
@@ -66,10 +71,7 @@
 }
 
 .profile__description {
-	font-family: "Inter", Arial, sans-serif;
 	font-size: 18px;
-	line-height: 22px;
-	font-weight: 400;
 	grid-area: description;
 	margin: 0;
 }
@@ -111,11 +113,8 @@
 }
 
 .card__description {
-	font-family: "Inter", Arial, sans-serif;
-	font-style: normal;
 	font-size: 24px;
 	font-weight: 900;
-	line-height: 29px;
 	display: flex;
 	background-color: white;
 	color: black;
@@ -125,6 +124,12 @@
 	padding-right: 20px;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.card__description-ellipsis {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .card__like-button {
