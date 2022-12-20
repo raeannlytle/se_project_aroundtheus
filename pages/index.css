@@ -72,6 +72,7 @@
 	width: 24px;
 	grid-template-areas: "button";
 	border: 1px solid white;
+	align-items: center;
 }
 
 .profile__description {
