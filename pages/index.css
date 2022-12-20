@@ -60,7 +60,7 @@
 	font-size: 42px;
 	font-weight: 500;
 	grid-area: title;
-	margin: 0;
+	margin: 0 0 16px;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
