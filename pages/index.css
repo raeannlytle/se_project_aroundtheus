@@ -72,7 +72,6 @@
 	width: 24px;
 	grid-template-areas: "button";
 	border: 1px solid white;
-	align-items: center;
 }
 
 .profile__description {
@@ -147,6 +146,19 @@
 	width: 21px;
 	height: 18px;
 	border: none;
+}
+
+.footer {
+	padding-left: 200px;
+	margin-top: 67px;
+	margin-bottom: 60px;
+}
+
+.footer__copyright {
+	color: #545454;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 22px;
 }
 
 @media screen and (max-width: 480px) {
