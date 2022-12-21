@@ -54,6 +54,7 @@
 	display: grid;
 	grid-template-areas: "title button" "description description";
 	grid-template-columns: minmax(auto, 373px) auto;
+	align-items: center;
 }
 
 .profile__title {
