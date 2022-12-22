@@ -1,168 +1,28 @@
 @import url(../vendor/normalize.css);
 
-@import url("./Inter-Black.woff");
+@import url(./Inter-Black.woff);
 
-@import url("./Inter-Black.woff2");
+@import url(./Inter-Black.woff2);
 
-@import url("./Inter-Medium.woff");
+@import url(./Inter-Medium.woff);
 
-@import url("./Inter-Medium.woff2");
+@import url(./Inter-Medium.woff2);
 
-@import url("./Inter-Regular.woff");
+@import url(./Inter-Regular.woff);
 
-@import url("./Inter-Regular.woff");
+@import url(./Inter-Regular.woff);
 
-.page {
-	background-color: black;
-	color: white;
-}
+@import url(../blocks/card.css);
 
-.page__section {
-	max-width: 880px;
-	width: 100%;
-	position: relative;
-	margin: 0 auto;
-}
+@import url(../blocks/fonts.css);
 
-.page__content {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-}
+@import url(../blocks/footer.css);
 
-.header {
-	margin-top: 45px;
-}
+@import url(../blocks/header.css);
 
-.profile {
-	display: flex;
-	align-items: center;
-	padding-top: 40px;
-	padding-left: 200px;
-	padding-right: 200px;
-}
+@import url(../blocks/page.css);
 
-.profile__image {
-	height: 120px;
-	width: 120px;
-	border-radius: 50%;
-	object-fit: cover;
-	background-position: center;
-	margin-right: 24px;
-}
-
-.profile__info {
-	display: grid;
-	grid-template-areas: "title button" "description description";
-	grid-template-columns: minmax(auto, 373px) auto;
-	align-items: center;
-}
-
-.profile__title {
-	font-size: 42px;
-	font-weight: 500;
-	grid-area: title;
-	margin: 0 0 16px;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
-.profile__edit-button {
-	background: transparent url(../images/edit-icon.svg) center no-repeat;
-	height: 24px;
-	width: 24px;
-	grid-template-areas: "button";
-	border: 1px solid white;
-	margin-left: 18px;
-}
-
-.profile__description {
-	font-size: 18px;
-	grid-template-areas: "description";
-	margin: 0;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
-.profile__add-button {
-	background: transparent url(../images/add-icon.svg) center no-repeat;
-	height: 50px;
-	width: 150px;
-	margin-left: auto;
-	border: 1px solid white;
-}
-
-.cards {
-	margin-top: 30px;
-	padding-left: 200px;
-	padding-right: 200px;
-	/* fonts */
-}
-
-.card__list {
-	display: grid;
-	justify-content: center;
-	grid-template-columns: repeat(auto-fit, 282px);
-	grid-gap: 20px 17px;
-	padding: 0;
-	margin: 0;
-}
-
-.card {
-	display: flex;
-	flex-direction: column;
-	list-style: none;
-	border-radius: 10px;
-}
-
-.card__image {
-	height: 282px;
-	width: 282px;
-}
-
-.card__description {
-	display: flex;
-	background-color: white;
-	padding-top: 25px;
-	padding-bottom: 25px;
-	padding-left: 20px;
-	padding-right: 20px;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.card__title {
-	font-size: 24px;
-	font-weight: 900;
-	color: black;
-	margin-top: 0;
-	margin-bottom: 0;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
-.card__like-button {
-	background: transparent url(../images/like-inactive.svg) center no-repeat;
-	width: 21px;
-	height: 18px;
-	border: none;
-}
-
-.footer {
-	padding-left: 200px;
-	margin-top: 67px;
-	padding-bottom: 60px;
-}
-
-.footer__copyright {
-	color: #545454;
-	font-size: 18px;
-	font-weight: 400;
-	line-height: 22px;
-}
+@import url(../blocks/profile.css);
 
 @media screen and (max-width: 480px) {
 	.profile {
