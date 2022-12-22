@@ -1,5 +1,17 @@
 @import url(../vendor/normalize.css);
 
+@import url("./Inter-Black.woff");
+
+@import url("./Inter-Black.woff2");
+
+@import url("./Inter-Medium.woff");
+
+@import url("./Inter-Medium.woff2");
+
+@import url("./Inter-Regular.woff");
+
+@import url("./Inter-Regular.woff");
+
 .page {
 	background-color: black;
 	color: white;
