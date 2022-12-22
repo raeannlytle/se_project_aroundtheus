@@ -39,6 +39,7 @@
 	grid-template-areas: "button";
 	border: 1px solid white;
 	margin-left: 18px;
+	cursor: pointer;
 }
 
 .profile__description {
@@ -56,4 +57,5 @@
 	width: 150px;
 	margin-left: auto;
 	border: 1px solid white;
+	cursor: pointer;
 }
