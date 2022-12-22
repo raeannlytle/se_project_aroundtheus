@@ -2,7 +2,7 @@
 
 @import url(../blocks/card.css);
 
-@import url(../blocks/fonts.css);
+@import url(../vendor/fonts.css);
 
 @import url(../blocks/footer.css);
 
