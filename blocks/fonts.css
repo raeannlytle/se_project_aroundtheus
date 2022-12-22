@@ -1,14 +1,14 @@
-@import url("./Inter-Black.woff");
+@import url("Inter-Regular.woff2?v=3.19");
 
-@import url("./Inter-Black.woff2");
+@import url("Inter-Regular.woff?v=3.19");
 
-@import url("./Inter-Medium.woff");
+@import url("Inter-Medium.woff2?v=3.19");
 
-@import url("./Inter-Medium.woff2");
+@import url("Inter-Medium.woff?v=3.19");
 
-@import url("./Inter-Regular.woff");
+@import url("Inter-Black.woff2?v=3.19");
 
-@import url("./Inter-Regular.woff");
+@import url("Inter-Black.woff?v=3.19");
 
 @font-face {
 	font-family: "Inter";

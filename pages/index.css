@@ -1,14 +1,5 @@
 @import url(../vendor/normalize.css);
 
-:root {
-	font-family: "Inter", sans-serif;
-}
-@supports (font-variation-settings: normal) {
-	:root {
-		font-family: "Inter var", sans-serif;
-	}
-}
-
 .page {
 	background-color: black;
 	color: white;
@@ -29,8 +20,6 @@
 
 .header {
 	margin-top: 45px;
-}
-.content {
 }
 
 .profile {
