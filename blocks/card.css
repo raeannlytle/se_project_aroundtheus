@@ -18,7 +18,6 @@
 	display: flex;
 	flex-direction: column;
 	list-style: none;
-	border-radius: 10px;
 }
 
 .card__image {
@@ -35,6 +34,8 @@
 	padding-right: 20px;
 	align-items: center;
 	justify-content: space-between;
+	border-end-end-radius: 10px;
+	border-end-start-radius: 10px;
 }
 
 .card__title {
