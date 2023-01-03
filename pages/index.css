@@ -19,6 +19,9 @@
 	}
 	.header {
 		margin-top: 28px;
+		justify-content: flex-start;
+		padding: 0;
+		margin-left: 27px;
 	}
 
 	.profile {
