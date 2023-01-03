@@ -13,10 +13,6 @@
 @import url(../blocks/profile.css);
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
-	.page__section {
-		display: flex;
-		justify-content: center;
-	}
 	.header {
 		margin-top: 28px;
 		padding: 0;

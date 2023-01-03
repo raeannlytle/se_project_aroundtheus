@@ -1,9 +1,8 @@
 .profile {
 	display: flex;
 	align-items: center;
-	padding-left: 200px;
-	padding-right: 200px;
 	margin-bottom: 51px;
+	margin-top: 40px;
 }
 
 .profile__image {
