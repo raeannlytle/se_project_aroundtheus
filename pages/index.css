@@ -54,8 +54,10 @@
 	.profile__add-button {
 		margin-top: 36px;
 		margin-bottom: 36px;
-		width: 100%;
+		width: calc(100% - 38px);
 		padding: 0;
+		margin-right: 19px;
+		margin-left: 19px;
 	}
 
 	.footer {
