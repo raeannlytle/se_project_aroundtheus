@@ -86,6 +86,7 @@
 		margin-top: 26px;
 		margin-bottom: 14px;
 		line-height: 27px;
+		max-width: 196px;
 	}
 	.profile__info {
 		display: flex;
