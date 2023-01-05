@@ -24,4 +24,4 @@ This project is a website containing a profile for Jacques Cousteau and differen
 - [Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)
 
 **GitHub**  
-https://github.com/raeannlytle/se_project_aroundtheus
+https://raeannlytle.github.io/se_project_aroundtheus/
