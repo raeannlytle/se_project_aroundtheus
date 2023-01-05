@@ -28,3 +28,19 @@
 		height: 24px;
 	}
 }
+
+@media screen and (min-width: 760px) and (max-width: 1100px) {
+	.header {
+		padding-top: 28px;
+		max-width: 880px;
+		width: 100%;
+		position: relative;
+		margin: 0 auto;
+		padding-left: 27px;
+	}
+
+	.header__image {
+		width: 126px;
+		height: 24px;
+	}
+}
