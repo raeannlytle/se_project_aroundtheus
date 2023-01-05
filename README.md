@@ -1,14 +1,23 @@
-# Raeann Lytle's Around the US Project
+# Around the U.S.
+
+By Raeann Lytle
 
 ### Overview
 
-- Description and Techniques Used
+- Description and Functionality
+- Technologies Used
 - Figma
 - GitHub
 
-**Description and Techniques Used**
+**Description and Functionality**
 
-This project is made so all the elements are displayed correctly on popular screen sizes. I used Figma to find the correct elements sizing, spacing, and layout using grid displays and flexbox. I created media queries in my CSS to help the page flow when scaling down from a desktop screen to a mobile device. I tested the page from 320px up to 1500px to ensure the layout runs smoothly at different stopping points.
+This project is a website containing a profile for Jacques Cousteau and different cards containing names and images off different areas in the U.S. This project shows how to create an HTML file and CSS files to create a website that works at resolutions as high at 1500px (desktop) and as small as 320px (mobile). The site includes a header, main content, and footer. All of the buttons on the site have interactive hovers. The site displays different cards using a grid layout.
+
+**Technologies Used**
+
+- HTML
+- CSS
+- Figma
 
 **Figma**
 
