@@ -17,6 +17,8 @@
 	.header {
 		padding-top: 28px;
 		padding-left: 27px;
+box-sizing: border-box;
+
 	}
 
 	.header__image {
