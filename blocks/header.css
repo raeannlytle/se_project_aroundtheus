@@ -4,8 +4,18 @@
 	padding-bottom: 41px;
 }
 
+.header__image {
+	width: 173px;
+	height: 33px;
+}
+
 @media screen and (min-width: 320px) and (max-width: 760px) {
 	.header {
 		padding-top: 28px;
+	}
+
+	.header__image {
+		width: 126px;
+		height: 24px;
 	}
 }
