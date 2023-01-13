@@ -64,3 +64,19 @@
 	margin-top: 18px;
 	padding: 0;
 }
+
+@media screen and (min-width: 320px) and (max-width: 660px) {
+	.modal__heading {
+		font-size: 18px;
+		line-height: 22px;
+	}
+	.modal__close {
+		width: 26px;
+		height: 26px;
+	}
+
+	.modal__button {
+		font-size: 14px;
+		line-height: 17px;
+	}
+}
