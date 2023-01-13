@@ -17,6 +17,7 @@
 	margin: auto;
 	padding: 36px;
 	border-radius: 10px;
+	position: relative;
 }
 
 .modal__close {
@@ -25,6 +26,11 @@
 	background-image: url(../images/modal-close.svg);
 	border: none;
 	background-color: transparent;
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: absolute;
+	top: -40px;
+	right: -40px;
 }
 .modal__heading {
 	color: black;
