@@ -1,11 +1,33 @@
 .modal {
-	display: none;
+	/* display: none; */
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.5);
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 999;
+	display: flex;
+	/* align-items: center; */
+	/* justify-content: center; */
 }
 
 .modal__container {
+	background-color: #fff;
+	margin: auto;
+	padding: 36px;
+	border-radius: 10px;
 }
 
+.modal__close {
+	width: 40px;
+	height: 40px;
+	background-image: url(../images/modal-close.svg);
+	border: none;
+	background-color: transparent;
+}
 .modal__heading {
+	color: black;
 }
 
 .modal__form {
