@@ -45,15 +45,22 @@
 	font-weight: 900;
 	font-size: 24px;
 	line-height: 29px;
+	margin: 0;
 }
 
 .modal__form {
 	display: flex;
 	flex-direction: column;
-	gap: 48px;
 	margin-top: 54px;
 }
 
 .modal__button {
 	height: 50px;
+	line-height: 22px;
+	font-size: 18px;
+	font-weight: 400;
+	background-color: #000;
+	color: #fff;
+	margin-top: 18px;
+	padding: 0;
 }
