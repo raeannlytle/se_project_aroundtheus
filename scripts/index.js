@@ -27,4 +27,4 @@ const initialCards = [
 
 const profileEditButton = document.querySelector('#profile-edit-button');
 
-console.log(profileEditButton)
+console.log(profileEditButton);
