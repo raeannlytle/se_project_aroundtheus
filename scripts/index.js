@@ -26,5 +26,7 @@ const initialCards = [
 ];
 
 const profileEditButton = document.querySelector('#profile-edit-button');
-
-console.log(profileEditButton);
+const profileEditModal = document.querySelector('#profile-edit-modal'); 
+profileEditButton.addEventListener('click',() => {
+	console.log("button clicks");
+})
