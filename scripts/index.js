@@ -34,6 +34,8 @@ const profileTitleInput = document.querySelector('#profile-title-input');
 const profileDescriptionInput = document.querySelector ('#profile-description-input');
 
 profileEditButton.addEventListener('click',() => {
+profileTitleInput.value = "Jacques Cousteau";
+profileDescriptionInput.value = "Explorer";
 			profileEditModal.classList.add('modal_opened');})
 	profileCloseButton.addEventListener('click', () => {
 		profileEditModal.classList.remove('modal_opened');
