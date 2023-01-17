@@ -33,10 +33,18 @@ const profileDescription = document.querySelector("#profile-description");
 const profileTitleInput = document.querySelector('#profile-title-input');
 const profileDescriptionInput = document.querySelector ('#profile-description-input');
 
+const profileEditForm = profileEditModal.querySelector('.modal__form');
+
 profileEditButton.addEventListener('click',() => {
 profileTitleInput.value = "Jacques Cousteau";
 profileDescriptionInput.value = "Explorer";
 			profileEditModal.classList.add('modal_opened');})
 	profileCloseButton.addEventListener('click', () => {
 		profileEditModal.classList.remove('modal_opened');
+})
+
+profileEditForm.addEventListener('submit', (e) => {
+	e.preventDefault();
+	profileTitle.textContent = profileTitleInput.value;
+	profileDescription.textContent = profileDescriptionInput.value;
 })
