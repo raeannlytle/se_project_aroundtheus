@@ -73,6 +73,7 @@
 	.modal__close {
 		width: 26px;
 		height: 26px;
+		left: calc(100% - 30px);
 	}
 
 	.modal__button {
