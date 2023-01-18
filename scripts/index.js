@@ -76,4 +76,4 @@ initialCards.forEach((cardData) => {
 	const cardElement = getCardElement(cardData);
 
 cardListEL.prepend(cardElement);
-})
+});
