@@ -24,6 +24,7 @@ const initialCards = [
 		link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
 	},
 ];
+/* Elements */
 
 const profileEditButton = document.querySelector('#profile-edit-button');
 const profileEditModal = document.querySelector('#profile-edit-modal'); 
@@ -35,21 +36,27 @@ const profileDescriptionInput = document.querySelector ('#profile-description-in
 
 const profileEditForm = profileEditModal.querySelector('.modal__form');
 
+/* Functions */
+
 function closePopUp() {
 	profileEditModal.classList.remove('modal_opened');
 }
+/* Event Handler */
 
-profileEditButton.addEventListener('click',() => {
-profileTitleInput.value = "Jacques Cousteau";
-profileDescriptionInput.value = "Explorer";
-			profileEditModal.classList.add('modal_opened');})
-	profileCloseButton.addEventListener('click', () => {
-		closePopUp();
-})
-
-profileEditForm.addEventListener('submit', (e) => {
+function handleProfileEditSubmit(e) {
 	e.preventDefault();
 	profileTitle.textContent = profileTitleInput.value;
 	profileDescription.textContent = profileDescriptionInput.value;
 	closePopUp();
-})
+}
+
+/* Event Listener */ 
+
+profileEditButton.addEventListener('click',() => {
+	profileTitleInput.value = "Jacques Cousteau";
+	profileDescriptionInput.value = "Explorer";
+	profileEditModal.classList.add('modal_opened');})
+
+profileCloseButton.addEventListener('click', closePopUp);
+
+profileEditForm.addEventListener('submit', handleProfileEditSubmit);
