@@ -40,6 +40,11 @@
 	left: calc(100% + 5px);
 	cursor: pointer;
 }
+
+.modal__close:hover {
+opacity: 0.6;
+}
+
 .modal__heading {
 	color: black;
 	font-weight: 900;
