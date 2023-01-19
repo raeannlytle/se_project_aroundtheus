@@ -70,6 +70,10 @@ opacity: 0.6;
 	padding: 0;
 }
 
+.modal__button:hover {
+	opacity: 0.8;
+}
+
 @media screen and (min-width: 320px) and (max-width: 660px) {
 	.modal__heading {
 		font-size: 18px;
