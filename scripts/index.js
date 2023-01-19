@@ -70,8 +70,8 @@ function handleProfileEditSubmit(e) {
 /* Event Listener */ 
 
 profileEditButton.addEventListener('click',() => {
-	profileTitleInput.value = "Jacques Cousteau";
-	profileDescriptionInput.value = "Explorer";
+	profileTitleInput.value = profileTitle.textContent;
+	profileDescriptionInput.value = profileDescription.textContent;
 	profileEditModal.classList.add('modal_opened');})
 
 profileCloseButton.addEventListener('click', closePopUp);
