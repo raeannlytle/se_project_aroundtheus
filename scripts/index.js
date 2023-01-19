@@ -75,7 +75,6 @@ profileEditButton.addEventListener('click',() => {
 	profileEditModal.classList.add('modal_opened');})
 
 profileCloseButton.addEventListener('click', closePopUp);
-
 profileEditForm.addEventListener('submit', handleProfileEditSubmit);
 
 initialCards.forEach((cardData) => {
