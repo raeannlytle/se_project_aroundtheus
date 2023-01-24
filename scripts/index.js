@@ -62,14 +62,18 @@ function openPopUp (popUp) {
   popUp.classList.add('modal_opened');
 }
 
-function renderCard(cardData) {
-	const cardElement = cardTemplate.cloneNode(true);
-	const cardImageElement = cardElement.querySelector('.card__image');
-	const cardTitleElement = cardElement.querySelector('.card__title');
-	cardImageElement.src = cardData.link;
-	cardImageElement.alt = cardData.name;
-	cardTitleElement.textContent = cardData.name;
-	return cardElement;
+function renderCard(cardElement, container) {
+  container.prepend(cardElement);
+}
+
+function getCardView(cardData) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardImageElement = cardElement.querySelector('.card__image');
+  const cardTitleElement = cardElement.querySelector('.card__title');
+  cardImageElement.src = cardData.link;
+  cardImageElement.alt = cardData.name;
+  cardTitleElement.textContent = cardData.name;
+  return cardElement;
 }
 
 
@@ -125,7 +129,7 @@ cardAddForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const title = e.target.title.value;
   const link = e.target.link.value;	
-  renderCard({
+  getCardView({
 	name: title,
 	link: link,
   });
@@ -135,6 +139,6 @@ cardAddForm.addEventListener('submit', (e) => {
 
 initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
-  renderCard(cardData);
+  getCardView(cardData);
   cardListElement.append(cardElement);
 });
