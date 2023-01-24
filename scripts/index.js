@@ -129,3 +129,10 @@ initialCards.forEach((cardData) => {
   const cardView = getCardView(cardData);
   renderCard(cardView, cardListElement);
 });
+
+const likeButtons = document.querySelectorAll('.card__like-button');
+  likeButtons.forEach(likeButton => {
+  likeButton.addEventListener('click', () => {
+  likeButton.classList.toggle(".card__like-button_active");
+	})
+})
