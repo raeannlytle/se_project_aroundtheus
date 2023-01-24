@@ -77,16 +77,6 @@ function getCardView(cardData) {
 }
 
 
-function getCardElement(cardData) {
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImageElement = cardElement.querySelector('.card__image');
-  const cardTitleElement = cardElement.querySelector('.card__title');
-  cardImageElement.src = cardData.link;
-  cardImageElement.alt = cardData.name;
-  cardTitleElement.textContent = cardData.name;
-  return cardElement;
-}
-
 /* Event Handler */
 
 function handleProfileEditSubmit(e) {
@@ -127,18 +117,15 @@ cardCloseButton.addEventListener('click', () => {
 
 cardAddForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  const title = e.target.title.value;
+  const name = e.target.title.value;
   const link = e.target.link.value;	
-  getCardView({
-	name: title,
-	link: link,
-  });
+const cardView = getCardView({name, link});
+  renderCard(cardView, cardListElement);
   closePopUp(cardAddModal);
 });
 
 
 initialCards.forEach((cardData) => {
-  const cardElement = getCardElement(cardData);
-  getCardView(cardData);
-  cardListElement.append(cardElement);
+  const cardView = getCardView(cardData);
+  renderCard(cardView, cardListElement);
 });
