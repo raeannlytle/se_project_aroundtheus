@@ -70,6 +70,11 @@ function getCardView(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageElement = cardElement.querySelector('.card__image');
   const cardTitleElement = cardElement.querySelector('.card__title');
+  const likeButton = cardElement.querySelector('.card__like-button');
+  likeButton.addEventListener('click', () => {
+  likeButton.classList.toggle(".card__like-button_active");
+	});
+
   cardImageElement.src = cardData.link;
   cardImageElement.alt = cardData.name;
   cardTitleElement.textContent = cardData.name;
@@ -130,9 +135,3 @@ initialCards.forEach((cardData) => {
   renderCard(cardView, cardListElement);
 });
 
-const likeButtons = document.querySelectorAll('.card__like-button');
-  likeButtons.forEach(likeButton => {
-  likeButton.addEventListener('click', () => {
-  likeButton.classList.toggle(".card__like-button_active");
-	})
-})
