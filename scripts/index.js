@@ -52,6 +52,8 @@ const cardTemplate = document.querySelector("#card-template").content.firstEleme
 
 const cardAddForm = cardAddModal.querySelector("#card-add-form");
 
+const cardDeleteButton = document.querySelector(".card__delete-button");
+
 /* Functions */
 
 function closePopUp(popUp) {
@@ -134,4 +136,6 @@ initialCards.forEach((cardData) => {
   const cardView = getCardView(cardData);
   renderCard(cardView, cardListElement);
 });
+
+
 

@@ -58,7 +58,7 @@
 	cursor: pointer;
 	border: none;
 	position: relative;
-	bottom: calc(100% - 18px);
+	top: 36px;
 	left: calc(100% - 33px);
 }
 
