@@ -52,7 +52,7 @@ const cardTemplate = document.querySelector("#card-template").content.firstEleme
 
 const cardAddForm = cardAddModal.querySelector("#card-add-form");
 
-const cardDeleteButton = document.querySelector("#card-delete-button");
+const cardImageModal = document.querySelector("#card-image-modal");
 
 /* Functions */
 
@@ -81,6 +81,15 @@ function getCardView(cardData) {
   cardImageElement.alt = cardData.name;
   cardTitleElement.textContent = cardData.name;
   return cardElement;
+}
+
+function cardDeleteButton(cardData) {
+	const cardElement = cardTemplate.cloneNode(true);
+	const cardDeleteButton = cardElement.querySelector('.card');
+	cardDeleteButton.addEventListener('click', () => {
+		cardDeleteButton.classList.remove('.card');
+	})
+
 }
 
 
@@ -120,10 +129,6 @@ profileEditForm.addEventListener('submit', handleProfileEditSubmit);
 
 cardCloseButton.addEventListener('click', () => {
 	closePopUp(cardAddModal);
-});
-
-cardDeleteButton.addEventListener('click', () => {
-	cardDeleteButton.cardListElement.remove(".card");
 });
 
 cardAddForm.addEventListener('submit', (e) => {
