@@ -123,7 +123,7 @@ cardCloseButton.addEventListener('click', () => {
 });
 
 cardDeleteButton.addEventListener('click', () => {
-	cardDeleteButton.cardTemplate.remove();
+	cardDeleteButton.cardListElement.remove(".card");
 });
 
 cardAddForm.addEventListener('submit', (e) => {
