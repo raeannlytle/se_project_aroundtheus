@@ -52,7 +52,7 @@ const cardTemplate = document.querySelector("#card-template").content.firstEleme
 
 const cardAddForm = cardAddModal.querySelector("#card-add-form");
 
-const cardDeleteButton = document.querySelector(".card__delete-button");
+const cardDeleteButton = document.querySelector("#card-delete-button");
 
 /* Functions */
 
@@ -120,6 +120,10 @@ profileEditForm.addEventListener('submit', handleProfileEditSubmit);
 
 cardCloseButton.addEventListener('click', () => {
 	closePopUp(cardAddModal);
+});
+
+cardDeleteButton.addEventListener('click', () => {
+	cardDeleteButton.cardTemplate.remove();
 });
 
 cardAddForm.addEventListener('submit', (e) => {
