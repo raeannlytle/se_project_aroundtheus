@@ -129,6 +129,10 @@ profileEditForm.addEventListener('submit', handleProfileEditSubmit);
 
 cardCloseButton.addEventListener('click', () => {
 	closePopUp(cardAddModal);
+
+cardDeleteButton.addEventListener('click', () => {
+	closePopUp(cardListElement);
+})
 });
 
 cardAddForm.addEventListener('submit', (e) => {
