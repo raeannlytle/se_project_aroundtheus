@@ -79,10 +79,6 @@ function openImageModal(cardData) {
 	const modalTitle = document.querySelector("#card-modal-title");
 	modalTitle.textContent = data.name;
 	openPopUp(cardImageModal);
-	const cardImageButton = cardElement.querySelector('#card-image-button');
-	cardImageButton.addEventListener('click', () => {
-	  openPopUp(cardImageModal);
-	})
 }
 
 function getCardView(cardData) {
@@ -96,6 +92,11 @@ function getCardView(cardData) {
 
 const deleteButton = cardElement.querySelector('#card-delete-button');
   deleteButton.addEventListener('click', deleteCard);
+
+  const cardImageButton = cardElement.querySelector('#card-image-button');
+  cardImageButton.addEventListener('click', () => {
+	openPopUp(cardImageModal);
+  });
 
 
   cardImageElement.src = cardData.link;
@@ -160,7 +161,6 @@ const cardView = getCardView({name, link});
   renderCard(cardView, cardListElement);
   closePopUp(cardAddModal);
 });
-
 
 initialCards.forEach((cardData) => {
   const cardView = getCardView(cardData);
