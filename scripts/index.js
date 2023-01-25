@@ -72,6 +72,19 @@ function deleteCard(e) {
 	e.target.closest(".card").remove();
 }
 
+function openImageModal(cardData) {
+	const modalImage = document.querySelector("#card-image-modal");
+	modalImage.src = data.link;
+	modalImage.alt = data.name;
+	const modalTitle = document.querySelector("#card-modal-title");
+	modalTitle.textContent = data.name;
+	openPopUp(cardImageModal);
+	const cardImageButton = cardElement.querySelector('#card-image-button');
+	cardImageButton.addEventListener('click', () => {
+	  openPopUp(cardImageModal);
+	})
+}
+
 function getCardView(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageElement = cardElement.querySelector('.card__image');
@@ -84,12 +97,12 @@ function getCardView(cardData) {
 const deleteButton = cardElement.querySelector('#card-delete-button');
   deleteButton.addEventListener('click', deleteCard);
 
+
   cardImageElement.src = cardData.link;
   cardImageElement.alt = cardData.name;
   cardTitleElement.textContent = cardData.name;
   return cardElement;
 }
-
 
 
 
