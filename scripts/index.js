@@ -68,6 +68,10 @@ function renderCard(cardElement, container) {
   container.prepend(cardElement);
 }
 
+function deleteCard(e) {
+	e.target.closest(".card").remove();
+}
+
 function getCardView(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageElement = cardElement.querySelector('.card__image');
@@ -77,20 +81,16 @@ function getCardView(cardData) {
   likeButton.classList.toggle("card__like-button_active");
 	});
 
+const deleteButton = cardElement.querySelector('#card-delete-button');
+  deleteButton.addEventListener('click', deleteCard);
+
   cardImageElement.src = cardData.link;
   cardImageElement.alt = cardData.name;
   cardTitleElement.textContent = cardData.name;
   return cardElement;
 }
 
-function cardDeleteButton(cardData) {
-	const cardElement = cardTemplate.cloneNode(true);
-	const cardDeleteButton = cardElement.querySelector('.card');
-	cardDeleteButton.addEventListener('click', () => {
-		cardDeleteButton.classList.remove('.card');
-	})
 
-}
 
 
 /* Event Handler */
@@ -107,6 +107,10 @@ function handleCardAddSubmit(e) {
 	cardTitle.textContent = cardTitleInput.value;
 	cardImage.src = cardImageInput.value;
 	closePopUp(cardAddModal);
+}
+
+function deleteCard(e) {
+	e.target.closest(".card").remove();
 }
 
 /* Event Listener */ 
