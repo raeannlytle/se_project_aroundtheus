@@ -53,7 +53,7 @@ const cardTemplate = document.querySelector("#card-template").content.firstEleme
 const cardAddForm = cardAddModal.querySelector("#card-add-form");
 
 const modalImage = document.querySelector("#card-modal-image");
-const modalCaption = document.querySelector("#card-modal-title");
+const modalCaption = document.querySelector("#card-modal-caption");
 const cardImageModal = document.querySelector("#card-image-modal");
 const cardImageModalClose = document.querySelector("#card-image-close");
 
