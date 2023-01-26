@@ -78,7 +78,7 @@ function openImageModal(cardData) {
 	modalImage.alt = data.name;
 	const modalTitle = document.querySelector("#card-modal-title");
 	modalTitle.textContent = data.name;
-	openPopUp(cardImageModal);
+	openImageModal(cardImageModal);
 }
 
 function getCardView(cardData) {
