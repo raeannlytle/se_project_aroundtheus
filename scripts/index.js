@@ -72,13 +72,13 @@ function deleteCard(e) {
 	e.target.closest(".card").remove();
 }
 
-function openImageModal(cardData) {
-	const cardImage = cardElement.querySelector(".card__image");
-	cardImage.src = cardData.link;
-	cardImage.alt = cardData.name;
-	const cardTitle = cardElement.querySelector(".card__title");
-	cardTitle.textContent = cardData.name;
-	openImageModal(cardImageModal);
+function makeImageModal(cardData) {
+	const modalImage = document.querySelector(".card-modal__image");
+	modalImage.src = cardData.link;
+	modalImage.alt = cardData.name;
+	const modalTitle = document.querySelector(".card-modal__title");
+	modalTitle.textContent = cardData.name;
+	openModal(cardImageModal);
 }
 
 function getCardView(cardData) {
@@ -95,8 +95,7 @@ const deleteButton = cardElement.querySelector('#card-delete-button');
 
   const cardImageButton = cardElement.querySelector('.card__image');
   cardImageButton.addEventListener('click', () => {
-	openImageModal(cardData);
-	openPopUp(cardImageModal);
+	makeImageModal(cardData);
   });
 
 
