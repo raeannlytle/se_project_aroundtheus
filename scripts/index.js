@@ -52,8 +52,10 @@ const cardTemplate = document.querySelector("#card-template").content.firstEleme
 
 const cardAddForm = cardAddModal.querySelector("#card-add-form");
 
+const modalImage = document.querySelector("#card-modal-image");
+const modalCaption = document.querySelector("#card-modal-title");
 const cardImageModal = document.querySelector("#card-image-modal");
-const cardImageButton = cardImageModal.querySelector("#modal-close-button");
+const cardImageModalClose = document.querySelector("#modal-close-button");
 
 /* Functions */
 
@@ -73,15 +75,6 @@ function deleteCard(e) {
 	e.target.closest(".card").remove();
 }
 
-function makeImageModal(cardData) {
-	const modalImage = document.querySelector(".card__image");
-	modalImage.src = cardData.link;
-	modalImage.alt = cardData.name;
-	const modalTitle = document.querySelector(".card__title");
-	modalTitle.textContent = cardData.name;
-	openPopUp(cardImageModal);
-}
-
 function getCardView(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageElement = cardElement.querySelector('.card__image');
@@ -94,11 +87,12 @@ function getCardView(cardData) {
 const deleteButton = cardElement.querySelector('#card-delete-button');
   deleteButton.addEventListener('click', deleteCard);
 
-  const cardImageButton = cardElement.querySelector('.card__image');
-  cardImageButton.addEventListener('click', () => {
-	makeImageModal(cardData);
-  });
-
+cardImageElement.addEventListener('click', () => { 
+	handlecardImageModal(cardData)
+	});
+cardImageModalClose.addEventListener('click', () => {
+	closePopUp(cardImageModal);
+});
 
   cardImageElement.src = cardData.link;
   cardImageElement.alt = cardData.name;
@@ -128,6 +122,14 @@ function deleteCard(e) {
 	e.target.closest(".card").remove();
 }
 
+function handlecardImageModal(cardData) {
+	modalImage.src = cardData.link;
+	modalImage.alt = cardData.name;
+	modalCaption.textContent = cardData.name;
+	openPopUp(cardImageModal);
+
+}
+
 
 /* Event Listener */ 
 
@@ -153,10 +155,6 @@ cardCloseButton.addEventListener('click', () => {
 cardDeleteButton.addEventListener('click', () => {
 	closePopUp(cardListElement);
 })
-});
-
-cardImageButton.addEventListener('click', () => {
-	closePopUp(cardImageModal);
 });
 
 cardAddForm.addEventListener('submit', (e) => {
