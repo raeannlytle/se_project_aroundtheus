@@ -71,6 +71,23 @@ cursor: pointer;
 	margin-top: 54px;
 }
 
+.modal__form-input {
+	height: 50px;
+	border-top: 1px;
+	border-right: 1px;
+	border-left: 1px;
+	border-color: rgba(0, 0, 0, 0.2);
+	margin-bottom: 30px;
+	padding: 0;
+}
+
+.modal__form-input::placeholder::placeholder {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	color: #000;
+}
+
 .modal__button {
 	height: 50px;
 	line-height: 22px;
