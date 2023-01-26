@@ -128,7 +128,7 @@ cursor: pointer;
 	.modal__close {
 		width: 26px;
 		height: 26px;
-		right: calc(100% - 30px);
+		left: calc(100% - 30px);
 		margin-bottom: 13px;
 	}
 
