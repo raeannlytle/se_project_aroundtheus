@@ -6,12 +6,12 @@
 	bottom: 0;
 	right: 0;
 	z-index: 999;
-	display: flex;
 	display: none;
 	padding: 0 19px;
 	visibility: hidden;
 	opacity: 0;
 	transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+	display: flex;
 	align-items: center;
 	justify-content: center;
 	pointer-events: none;
