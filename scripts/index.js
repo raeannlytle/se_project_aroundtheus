@@ -53,6 +53,7 @@ const cardTemplate = document.querySelector("#card-template").content.firstEleme
 const cardAddForm = cardAddModal.querySelector("#card-add-form");
 
 const cardImageModal = document.querySelector("#card-image-modal");
+const cardImageButton = cardImageModal.querySelector("#modal-close-button");
 
 /* Functions */
 
@@ -73,12 +74,12 @@ function deleteCard(e) {
 }
 
 function makeImageModal(cardData) {
-	const modalImage = document.querySelector(".card-modal__image");
+	const modalImage = document.querySelector(".card__image");
 	modalImage.src = cardData.link;
 	modalImage.alt = cardData.name;
-	const modalTitle = document.querySelector(".card-modal__title");
+	const modalTitle = document.querySelector(".card__title");
 	modalTitle.textContent = cardData.name;
-	openModal(cardImageModal);
+	openPopUp(cardImageModal);
 }
 
 function getCardView(cardData) {
@@ -152,6 +153,10 @@ cardCloseButton.addEventListener('click', () => {
 cardDeleteButton.addEventListener('click', () => {
 	closePopUp(cardListElement);
 })
+});
+
+cardImageButton.addEventListener('click', () => {
+	closePopUp(cardImageModal);
 });
 
 cardAddForm.addEventListener('submit', (e) => {
