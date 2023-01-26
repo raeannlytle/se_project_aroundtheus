@@ -15,7 +15,7 @@
 	color: #000;
 }
 
-.form__input_edit {
+.form__edit {
 	height: 50px;
 	border-top: 1px;
 	border-right: 1px;
@@ -25,7 +25,7 @@
 	padding: 0;
 }
 
-.form__input_add {
+.form__add {
 	height: 50px;
 	border-top: 1px;
 	border-right: 1px;
