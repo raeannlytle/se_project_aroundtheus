@@ -163,6 +163,7 @@ cardAddForm.addEventListener('submit', (e) => {
 const cardView = getCardView({name, link});
   renderCard(cardView, cardListElement);
   closePopUp(cardAddModal);
+  cardAddForm.reset();
 });
 
 initialCards.forEach((cardData) => {
