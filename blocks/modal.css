@@ -25,6 +25,14 @@
 	position: relative;
 	width: 430px;
 	height: 330px;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s opacity 0.5s linear;
+}
+
+.modal__container:hover {
+	visibility: visible;
+	opacity: 1;
 }
 
 .modal__close {
@@ -39,20 +47,6 @@
 	bottom: calc(100% + 5px);
 	left: calc(100% + 5px);
 	cursor: pointer;
-}
-
-.modal__close_image {
-	background-image: url(../images/modal-close.svg);
-	border: none;
-	background-color: transparent;
-	background-repeat: no-repeat;
-	background-size: contain;
-	position: relative;
-	top: -40px;
-	left: -40px;
-	cursor: pointer;
-	width: 40px;
-	height: 40px;
 }
 
 .modal__close:hover {
