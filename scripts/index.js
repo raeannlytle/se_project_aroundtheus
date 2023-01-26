@@ -113,6 +113,7 @@ function handleCardAddSubmit(e) {
 	e.preventDefault();
 	cardTitle.textContent = cardTitleInput.value;
 	cardImage.src = cardImageInput.value;
+	cardImage.alt = cardImageInput.value;
 	closePopUp(cardAddModal);
 }
 
