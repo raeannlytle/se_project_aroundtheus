@@ -66,29 +66,3 @@
 .card__delete-button:hover {
 	opacity: 0.6;
 }
-
-
-.card-modal__container {
-	position: relative;
-}
-
-.card-modal__image {
-	max-width: 100%;
-	max-height: 540px;
-}
-
-.card-modal__caption {
-	font-weight: 400;
-	font-size: 12px;
-	line-height: 14px;
-	margin: 10px 0 0;
-}
-
-@media screen and (min-width: 660px) and (max-width: 820px) {
-	.card-modal__close {
-		left: calc(100% - 30px);
-        width: 30px;
-        height: 30px;
-	}
-}
-
