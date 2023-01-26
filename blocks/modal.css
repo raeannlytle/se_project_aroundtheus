@@ -106,3 +106,18 @@ cursor: pointer;
 		line-height: 17px;
 	}
 }
+
+@media screen and (min-width: 320px) and (max-width: 660px) {
+	.modal__container {
+		top: 136px;
+		max-height: 300px;
+		max-width: 100%;
+	}
+}
+
+@media screen and (min-width: 660px) and (max-width: 880px) {
+	.modal__container {
+		max-height: 300px;
+		max-width: 100%;
+	}
+}
