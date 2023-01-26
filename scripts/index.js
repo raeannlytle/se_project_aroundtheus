@@ -73,11 +73,11 @@ function deleteCard(e) {
 }
 
 function openImageModal(cardData) {
-	const modalImage = document.querySelector("#card-image-modal");
-	modalImage.src = data.link;
-	modalImage.alt = data.name;
-	const modalTitle = document.querySelector("#card-modal-title");
-	modalTitle.textContent = data.name;
+	const cardImage = cardElement.querySelector(".card__image");
+	cardImage.src = cardData.link;
+	cardImage.alt = cardData.name;
+	const cardTitle = cardElement.querySelector(".card__title");
+	cardTitle.textContent = cardData.name;
 	openImageModal(cardImageModal);
 }
 
@@ -95,6 +95,7 @@ const deleteButton = cardElement.querySelector('#card-delete-button');
 
   const cardImageButton = cardElement.querySelector('.card__image');
   cardImageButton.addEventListener('click', () => {
+	openImageModal(cardData);
 	openPopUp(cardImageModal);
   });
 
