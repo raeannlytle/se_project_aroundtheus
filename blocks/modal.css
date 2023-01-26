@@ -41,6 +41,20 @@
 	cursor: pointer;
 }
 
+.modal__close_image {
+	background-image: url(../images/modal-close.svg);
+	border: none;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: absolute;
+	top: calc(100% - 75vh);
+    right: calc(100% - 75vh);
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+}
+
 .modal__close:hover {
 opacity: 0.6;
 }
