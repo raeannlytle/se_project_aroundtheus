@@ -93,7 +93,7 @@ function getCardView(cardData) {
 const deleteButton = cardElement.querySelector('#card-delete-button');
   deleteButton.addEventListener('click', deleteCard);
 
-  const cardImageButton = cardElement.querySelector('#card-image-button');
+  const cardImageButton = cardElement.querySelector('.card__image');
   cardImageButton.addEventListener('click', () => {
 	openPopUp(cardImageModal);
   });
@@ -126,6 +126,7 @@ function handleCardAddSubmit(e) {
 function deleteCard(e) {
 	e.target.closest(".card").remove();
 }
+
 
 /* Event Listener */ 
 
