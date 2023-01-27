@@ -61,43 +61,42 @@ const cardImageModalClose = document.querySelector("#card-image-close");
 function closePopUp(popUp) {
   popUp.classList.remove('modal_opened');
 }
-
+  
 function openPopUp (popUp) {
   popUp.classList.add('modal_opened');
 }
-
+  
 function renderCard(cardElement, container) {
   container.prepend(cardElement);
 }
-
+  
 function deleteCard(e) {
   e.target.closest(".card").remove();
 }
-
+  
 function getCardView(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageElement = cardElement.querySelector('.card__image');
   const cardTitleElement = cardElement.querySelector('.card__title');
   const likeButton = cardElement.querySelector('.card__like-button');
   const cardDeleteButton = cardElement.querySelector('#card-delete-button');
-
+  
   likeButton.addEventListener('click', () => {
     likeButton.classList.toggle("card__like-button_active");
-  });
-
-  cardDeleteButton.addEventListener('click', () => {
-	deleteCard(cardData);
-  })
+});
+  
+  cardDeleteButton.addEventListener('click', deleteCard);
 
   cardImageElement.addEventListener('click', () => { 
     handleCardImageModal(cardData)
-  });
-
+});
+  
   cardImageElement.src = cardData.link;
   cardImageElement.alt = cardData.name;
   cardTitleElement.textContent = cardData.name;
   return cardElement;
-}
+};
+  
 
 /* Event Handler */
 function handleProfileEditSubmit(e) {
