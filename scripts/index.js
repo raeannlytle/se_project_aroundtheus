@@ -87,7 +87,7 @@ const deleteButton = cardElement.querySelector('#card-delete-button');
   deleteButton.addEventListener('click', deleteCard);
 
 cardImageElement.addEventListener('click', () => { 
-	handlecardImageModal(cardData)
+	handleCardImageModal(cardData)
 });
 
   cardImageElement.src = cardData.link;
@@ -118,7 +118,7 @@ function deleteCard(e) {
 	e.target.closest(".card").remove();
 }
 
-function handlecardImageModal(cardData) {
+function handleCardImageModal(cardData) {
 	modalImage.src = cardData.link;
 	modalImage.alt = cardData.name;
 	modalCaption.textContent = cardData.name;
