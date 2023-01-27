@@ -103,7 +103,7 @@ function handleProfileEditSubmit(e) {
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
   closePopUp(profileEditModal);
-  }
+}
   
 function handleCardAddSubmit(e) {
   e.preventDefault();
