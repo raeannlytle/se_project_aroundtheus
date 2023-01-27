@@ -111,7 +111,7 @@ function handleCardAddSubmit(e) {
   cardImage.src = cardImageInput.value;
   cardImage.alt = cardImageInput.value;
   closePopUp(cardAddModal);
-  }
+}
   
 function deleteCard(e) {
   e.target.closest(".card").remove();
