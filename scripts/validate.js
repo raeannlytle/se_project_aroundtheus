@@ -8,6 +8,14 @@ function showInputError (formElement, inputElement, { inputErrorClass, errorClas
   errorMessageElement.classList.add(errorClass);
 }
 
+function hideInputError (formElement, inputElement, { inputErrorClass, errorClass }) {
+  const errorMessageElement = formElement.querySelector(`#${inputElement.id}-error`);
+  inputElement.classList.remove(inputErrorClass);
+  errorMessageElement.textContent = '';
+  errorMessageElement.classList.remove(errorClass);
+}
+
+
 function checkInputValidity (formElement, inputElement, options) {
   if(!inputElement.validity.valid){
     showInputError(formElement, inputElement, options);
