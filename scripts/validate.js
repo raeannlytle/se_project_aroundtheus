@@ -1,9 +1,11 @@
 // enabling validation by calling enableValidation()
 // pass all the settings on call
 
-function showInputError (formElement, inputElement, options) {
+function showInputError (formElement, inputElement, { inputErrorClass, errorClass }) {
   const errorMessageElement = formElement.querySelector(`#${inputElement.id}-error`);
-  console.log(errorMessageElement);
+  inputElement.classList.add(inputErrorClass);
+  errorMessageElement.textContent = inputElement.validationMessage;
+  errorMessageElement.classList.add(errorClass);
 }
 
 function checkInputValidity (formElement, inputElement, options) {
