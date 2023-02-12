@@ -125,8 +125,14 @@
 	line-height: 15px;
 	color: #ff0000;
 	position: absolute;
-	top: calc(100% + 5px);
+	margin-left: 35px;
+	margin-top: 5px;
 	transition: opacity 0.3s;
+}
+
+.modal__error_visible {
+	border-bottom: 1px solid #ff0000;
+
 }
 
 @media screen and (min-width: 320px) and (max-width: 660px) {

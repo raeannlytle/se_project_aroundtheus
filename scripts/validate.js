@@ -43,6 +43,9 @@ function setEventListeners(formElement, options) {
   const { inputSelector } = options;
   const inputElements = [...formElement.querySelectorAll(inputSelector)];
   const submitButton = formElement.querySelector('.modal__button');
+  formElement.addEventListener('reset', () => {
+    disableButton(submitButton, inactiveButtonClass);
+  });
   
   inputElements.forEach(inputElement => {
     inputElement.addEventListener('input', (e) => {
