@@ -52,9 +52,9 @@
 }
 
 .modal__close:hover {
-opacity: 0.6;
-transition: 0.5s;
-cursor: pointer;
+    opacity: 0.6;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 .modal__heading {
