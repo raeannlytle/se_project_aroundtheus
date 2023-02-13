@@ -21,6 +21,16 @@ function checkInputValidity (formElement, inputElement, options) {
   }
 }
 
+function enableButton(submitButton, inactiveButtonClass) {
+  submitButton.classList.add(inactiveButtonClass);
+  submitButton.disabled = false;
+}
+
+function disableButton(submitButton, inactiveButtonClass) {
+  submitButton.classList.remove(inactiveButtonClass);
+  submitButton.disabled = true;
+}
+
 function toggleButtonState (inputElements, submitButton, { inactiveButtonClass }) {
   let foundInvalid = false;
   
@@ -64,6 +74,22 @@ function enableValidation(options) {
 
     setEventListeners(formElement, options);
   });
+}
+
+function closePopUp(popUp) {
+  popUp.classList.remove('modal_opened');
+}
+
+function cardCloseOverlay(event) {
+  if(event.target.classList.contains("modal")) {
+    closePopUp(cardAddForm)
+  }
+}
+
+function profileCloseOverlay(event) {
+  if(event.target.classList.contains("modal")) {
+    closePopUp(profileEditForm);
+  }
 }
 
 const config = {

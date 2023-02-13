@@ -130,9 +130,10 @@
 	transition: opacity 0.3s;
 }
 
-.modal__error_visible {
-	border-bottom: 1px solid #ff0000;
-
+.modal__button_disabled {
+	background-color: #E5E5E5;
+	cursor: not-allowed;
+	border: none;
 }
 
 @media screen and (min-width: 320px) and (max-width: 660px) {
