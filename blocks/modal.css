@@ -125,8 +125,7 @@
 	line-height: 15px;
 	color: #ff0000;
 	position: absolute;
-	margin-left: 35px;
-	margin-top: 5px;
+	top: 45%;
 	transition: opacity 0.3s;
 }
 
