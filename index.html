@@ -47,6 +47,7 @@
 				<button class="modal__close" id="modal-close-button"></button>
 				<p class="modal__heading">Edit profile</p>
 				<form class="modal__form" id="profile-edit-form">
+					<label>
 					<input
 					class="modal__form-input"
 						type="text"
@@ -58,6 +59,8 @@
 						maxlength="40"
 					/>
 					<span class="modal__error" id="profile-title-input-error"></span>
+					</label>
+					<label>
 					<input
 					class="modal__form-input"
 						type="text"
@@ -69,6 +72,7 @@
 						maxlength="200"
 					/>
 					<span class="modal__error" id="profile-description-input-error"></span>
+					</label>
 					<button class="modal__button">Save</button>
 				</form>
 			</div>
@@ -125,7 +129,7 @@
 				</div>
 			</li>
 		</template>
-		<script src="./scripts/validate.js" defer></script>
 		<script src="./scripts/index.js" defer></script> 
+		<script src="./scripts/validate.js" defer></script>
 	</body>
 </html>

@@ -79,6 +79,7 @@
 	border-color: rgba(0, 0, 0, 0.2);
 	margin-bottom: 30px;
 	padding: 0;
+	width: 100%;
 }
 
 .modal__form-input::placeholder::placeholder {
