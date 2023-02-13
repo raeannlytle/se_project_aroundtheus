@@ -37,6 +37,7 @@ const profileTitle = document.querySelector("#profile-title");
 const profileDescription = document.querySelector("#profile-description");
 const profileTitleInput = document.querySelector('#profile-title-input');
 const profileDescriptionInput = document.querySelector ('#profile-description-input');
+const outsideForm = document.querySelector(".modal");
 
 const cardAddModal = document.querySelector("#card-add-modal");
 const cardAddButton = document.querySelector("#profile-add-button");

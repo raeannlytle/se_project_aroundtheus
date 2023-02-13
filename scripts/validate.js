@@ -50,9 +50,9 @@ function toggleButtonState (inputElements, submitButton, { inactiveButtonClass }
 }
 
 function setEventListeners(formElement, options) {
-  const { inputSelector } = options;
+  const { inputSelector, submitButtonSelector, inactiveButtonClass } = options;
   const inputElements = [...formElement.querySelectorAll(inputSelector)];
-  const submitButton = formElement.querySelector('.modal__button');
+  const submitButton = formElement.querySelector(submitButtonSelector);
   formElement.addEventListener('reset', () => {
     disableButton(submitButton, inactiveButtonClass);
   });
@@ -61,8 +61,8 @@ function setEventListeners(formElement, options) {
     inputElement.addEventListener('input', (e) => {
         checkInputValidity(formElement, inputElement, options);
         toggleButtonState(inputElements, submitButton, options);
-    })
-  })
+    });
+  });
 }
 
 function enableValidation(options) {
@@ -76,21 +76,25 @@ function enableValidation(options) {
   });
 }
 
-function closePopUp(popUp) {
-  popUp.classList.remove('modal_opened');
-}
-
-function cardCloseOverlay(event) {
-  if(event.target.classList.contains("modal")) {
-    closePopUp(cardAddForm)
-  }
+function clickCloseOverlay(profileEditModal, cardAddModal) {
+  outsideForm.addEventListener("click", function () {
+    closePopUp(profileEditModal, cardAddModal);
+  });
 }
 
 function profileCloseOverlay(event) {
-  if(event.target.classList.contains("modal")) {
-    closePopUp(profileEditForm);
+  if(event.target.classList.contains(".modal")) {
+    closePopUp(profileEditModal);
   }
 }
+
+function closeKeyHandler(evt) {
+    if(evt.key === "Escape") {
+      closePopUp(profileEditModal, cardAddModal);
+    }
+  }
+
+profileCloseButton.addEventListener("keydown", closeKeyHandler);
 
 const config = {
   formSelector: ".modal__form",
