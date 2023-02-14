@@ -64,8 +64,6 @@ function closePopUp(popUp) {
   
 function openPopUp (popUp) {
   popUp.classList.add('modal_opened');
-  document.removeEventListener("keydown", closeByEscape);
-  document.removeEventListener("mousedown", handleOverlay);
 }
   
 function renderCard(cardElement, container) {
@@ -119,6 +117,7 @@ function handleCardAddSubmit(e) {
 function deleteCard(e) {
   e.target.closest(".card").remove();
 }
+
   
 function handleCardImageModal(cardData) {
   modalImage.src = cardData.link;
@@ -127,18 +126,6 @@ function handleCardImageModal(cardData) {
   openPopUp(cardImageModal);
 }
 
-function closeByEscape(evt) {
-  if(evt.key === "Escape") {
-    const openedPopUp = document.querySelector(".modal_opened");
-    closePopUp(openedPopUp);
-  }
-}
-  
-function handleOverlay(evt) {
-  if(evt.target.classList.contains("modal_opened")) {
-    closePopUp(evt.target);
-  }
-}
 
 
 /* Event Listener */ 
