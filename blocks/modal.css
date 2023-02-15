@@ -82,6 +82,12 @@
 	width: 100%;
 }
 
+
+.modal__error-visible {
+	border-bottom: 1px solid red;
+	margin: 0;
+}
+
 .modal__form-input::placeholder::placeholder {
 	font-weight: 400;
 	font-size: 14px;
@@ -121,13 +127,15 @@
 	margin: 10px 0 0;
 }
 
-.modal__error {
-	font-size: 12px;
-	line-height: 15px;
-	color: #ff0000;
-	position: absolute;
-	top: 45%;
-	transition: opacity 0.3s;
+.modal__input-type-error {
+	font-family: 'Inter', arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #ff0000;
+    margin-top: 5px;
+    margin-bottom: 13px;
 }
 
 .modal__button_disabled {
