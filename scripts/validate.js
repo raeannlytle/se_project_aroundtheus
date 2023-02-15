@@ -43,22 +43,25 @@ function toggleButtonState(inputElements, submitButton, inactiveButtonClass) {
 }
 
 function setEventListeners(formElement, options) {
-  const { inputSelector, inactiveButtonClass } = options;
-  const inputElements = [...formElement.querySelectorAll(inputSelector)];
-  const submitButton = formElement.querySelector(".modal__button");
-
-  console.log(inputElements);
+  const inputElements = Array.from(formElement.querySelectorAll(options.inputSelector));
+  const submitButton = formElement.querySelector(options.submitButtonSelector);
 
   inputElements.forEach(inputElement => {
     inputElement.addEventListener("input", (event) => {
       checkInputValidity(formElement, inputElement, options);
-      toggleButtonState(inputElements, submitButton, inactiveButtonClass);
+      toggleButtonState(inputElements, submitButton, options);
+    });
+
+    formElement.addEventListener('reset', () => {
+      setTimeout(() => {
+        toggleButtonState(inputElements, submitButton, options);
+      }, 0);
     });
   });
 }
 
 function enableValidation(options) {
-  const formElements = document.querySelectorAll(options.formSelector);
+  const formElements = Array.from(document.querySelectorAll(options.formSelector));
   formElements.forEach((formElement) => {
     formElement.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -67,7 +70,7 @@ function enableValidation(options) {
   });
 }
 
-const config = {
+const options = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__button",
@@ -76,6 +79,6 @@ const config = {
   errorClass: "modal__error_visible"
 };
 
-enableValidation(config);
+enableValidation(options);
 
  
