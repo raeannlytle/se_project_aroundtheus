@@ -141,17 +141,6 @@ function handleCardImageModal(cardData) {
 
 /* Event Listener */ 
 
-modals.forEach((modal) => {
-  modal.addEventListener('mousedown', (e) => {
-    if(e.target.classList.contains('modal')) {
-      closePopUp(modal);
-    };
-    if (e.target.classList.contains('modal__button')) {
-      closePopUp(modal);
-    }
-  });
-}); 
-
 profileEditButton.addEventListener('click',() => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
