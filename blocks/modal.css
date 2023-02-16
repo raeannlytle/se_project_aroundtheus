@@ -86,9 +86,6 @@
 	border-bottom: solid 1px #ff0000;
 }
 
-.modal__error-visible {
-	display:block;
-}
 
 .modal__form-input::placeholder::placeholder {
 	font-weight: 400;
@@ -137,8 +134,12 @@
     margin-top: 5px;
     margin-bottom: 13px;
 	position: absolute;
-	bottom: calc(100% + 5px);
-	left: calc(100% + 13px);
+	top: 50px;
+	left: 0;
+}
+
+.modal__error-visible {
+	display:block;
 }
 
 .modal__label {

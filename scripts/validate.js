@@ -24,21 +24,21 @@ function hasInvalidInput(inputList) {
   return !inputList.every((inputElement) => inputElement.validity.valid);
 }
 
-function disableSubmitButton(submitButton, options) {
-  submitButton.classList.add(options.inactiveButtonClass);
+function disableSubmitButton(submitButton, { inactiveButtonClass }) {
+  submitButton.classList.add(inactiveButtonClass);
   submitButton.disabled = true;
 }
 
-function enableSubmitButton(submitButton, options) {
-  submitButton.classList.remove(options.inactiveButtonClass);
+function enableSubmitButton(submitButton, { inactiveButtonClass }) {
+  submitButton.classList.remove(inactiveButtonClass);
   submitButton.disabled = false;
 }
 
-function toggleButtonState(inputElements, submitButton, inactiveButtonClass) {
+function toggleButtonState(inputElements, submitButton, { inactiveButtonClass }) {
   if(hasInvalidInput(inputElements)) {
-    disableSubmitButton(submitButton, inactiveButtonClass);
+    disableSubmitButton(submitButton, { inactiveButtonClass });
   } else {
-    enableSubmitButton(submitButton, inactiveButtonClass);
+    enableSubmitButton(submitButton, { inactiveButtonClass });
   }
 }
 
@@ -80,5 +80,6 @@ const options = {
 };
 
 enableValidation(options);
+
 
  
