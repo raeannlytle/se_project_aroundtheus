@@ -164,7 +164,6 @@ cardAddButton.addEventListener('click',() => {
   
 cardAddButton.addEventListener('click',() => {
   const submitButton = cardAddModal.querySelector('.modal__button')
-  enableButton(submitButton, config.inactiveButtonClass)
   openPopUp(cardAddModal);
 });
 
