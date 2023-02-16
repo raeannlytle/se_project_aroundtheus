@@ -36,9 +36,9 @@ function enableSubmitButton(submitButton, options) {
 
 function toggleButtonState(inputElements, submitButton, inactiveButtonClass) {
   if(hasInvalidInput(inputElements)) {
-    disableSubmitButton(submitButton, options);
+    disableSubmitButton(submitButton, inactiveButtonClass);
   } else {
-    enableSubmitButton(submitButton, options);
+    enableSubmitButton(submitButton, inactiveButtonClass);
   }
 }
 
