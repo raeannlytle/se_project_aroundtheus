@@ -140,6 +140,13 @@ function handleCardImageModal(cardData) {
 
 
 /* Event Listener */ 
+modals.forEach((modal) => {
+  modal.addEventListener('mousedown', (e) => {
+    if(e.target.classList.contains('modal')) {
+      closePopUp(modal);
+    };
+  });
+}); 
 
 profileEditButton.addEventListener('click',() => {
   profileTitleInput.value = profileTitle.textContent;
@@ -179,8 +186,5 @@ cardAddForm.addEventListener('submit', (e) => {
 initialCards.forEach((cardData) => {
   const cardView = getCardView(cardData);
   renderCard(cardView, cardListElement);
-});
-  
-
-
+})
 
