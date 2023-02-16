@@ -159,7 +159,7 @@ profileEditButton.addEventListener('click',() => {
 });
   
 cardAddButton.addEventListener('click',() => {
-  disableSubmitButton(cardCloseButton, options.inactiveButtonClass);
+  disableSubmitButton(cardAddButton, options.inactiveButtonClass);
   openPopUp(cardAddModal);
 });
   
