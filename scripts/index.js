@@ -163,7 +163,6 @@ cardAddButton.addEventListener('click',() => {
 });
   
 cardAddButton.addEventListener('click',() => {
-  const submitButton = cardAddModal.querySelector('.modal__button')
   openPopUp(cardAddModal);
 });
 
