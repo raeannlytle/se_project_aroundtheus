@@ -159,14 +159,10 @@ profileEditButton.addEventListener('click',() => {
 });
   
 cardAddButton.addEventListener('click',() => {
-  disableSubmitButton(cardAddButton, options.inactiveButtonClass);
   openPopUp(cardAddModal);
+  disableSubmitButton(cardAddButton, options.inactiveButtonClass);
 });
   
-cardAddButton.addEventListener('click',() => {
-  openPopUp(cardAddModal);
-});
-
 profileCloseButton.addEventListener('click', () => {
   closePopUp(profileEditModal);
 });
