@@ -29,6 +29,7 @@ const initialCards = [
 		link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
 	}
 ];
+
 /* Elements */
 const profileEditButton = document.querySelector('#profile-edit-button');
 const profileEditModal = document.querySelector('#profile-edit-modal'); 
@@ -107,7 +108,6 @@ function getCardView(cardData) {
   cardTitleElement.textContent = cardData.name;
   return cardElement;
 };
-  
 
 /* Event Handler */
 function handleProfileEditSubmit(e) {
@@ -116,7 +116,7 @@ function handleProfileEditSubmit(e) {
   profileDescription.textContent = profileDescriptionInput.value;
   closePopUp(profileEditModal);
 }
-  
+
 function handleCardAddSubmit(e) {
   e.preventDefault();
   cardTitle.textContent = cardTitleInput.value;
@@ -124,20 +124,17 @@ function handleCardAddSubmit(e) {
   cardImage.alt = cardImageInput.value;
   closePopUp(cardAddModal);
 }
-  
+ 
 function deleteCard(e) {
   e.target.closest(".card").remove();
 }
 
-  
 function handleCardImageModal(cardData) {
   modalImage.src = cardData.link;
   modalImage.alt = cardData.name;
   modalCaption.textContent = cardData.name;
   openPopUp(cardImageModal);
 }
-
-
 
 /* Event Listener */ 
 modals.forEach((modal) => {
@@ -187,4 +184,3 @@ initialCards.forEach((cardData) => {
   const cardView = getCardView(cardData);
   renderCard(cardView, cardListElement);
 })
-
