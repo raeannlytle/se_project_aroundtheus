@@ -158,7 +158,6 @@ profileCloseButton.addEventListener('click', () => {
 profileEditForm.addEventListener('submit', handleProfileEditSubmit);
 
 cardAddButton.addEventListener('click',() => {
-  disableSubmitButton(cardAddForm, options.inactiveButtonClass);
   openPopUp(cardAddModal);
 });
   
