@@ -55,9 +55,10 @@ function setEventListeners(formElement, options) {
     formElement.addEventListener('reset', () => {
     setTimeout(() => {
       toggleButtonState(inputElements, submitButton, options);
-    }, 0);
+      }, 0);
+    });
   });
-});
+}
 
 function enableValidation(options) {
   const formElements = Array.from(document.querySelectorAll(options.formSelector));
