@@ -52,24 +52,15 @@ function setEventListeners(formElement, options) {
       checkInputValidity(formElement, inputElement, options);
       toggleButtonState(inputElements, submitButton, options);
     });
+});
 
-    formElement.addEventListener('reset', () => {
+  formElement.addEventListener('reset', () => {
     setTimeout(() => {
       toggleButtonState(inputElements, submitButton, options);
       }, 0);
-    });
   });
 }
 
-function enableValidation(options) {
-  const formElements = Array.from(document.querySelectorAll(options.formSelector));
-  formElements.forEach((formElement) => {
-    formElement.addEventListener("submit", (event) => {
-      event.preventDefault();
-    });
-    setEventListeners(formElement, options);
-  });
-}
 
 const options = {
   formSelector: ".modal__form",
