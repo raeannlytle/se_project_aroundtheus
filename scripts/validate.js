@@ -1,3 +1,14 @@
+function enableValidation(options) {
+  const forms = Array.from(document.querySelectorAll(options.formSelector));
+  forms.forEach((formElement) => {
+    formElement.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+    });
+
+    setEventListeners(formElement, options);
+  });
+}
+
 function showInputError(formElement, inputElement, { inputErrorClass, errorClass }) {
   const errorMessageElement = formElement.querySelector(`#${inputElement.id}-error`);
   inputElement.classList.add(inputErrorClass);
