@@ -47,20 +47,20 @@ function setEventListeners(formElement, options) {
   const submitButton = formElement.querySelector(options.submitButtonSelector);
 
   toggleButtonState(inputElements, submitButton, options);
+
   inputElements.forEach((inputElement) => {
     inputElement.addEventListener("input", () => {
       checkInputValidity(formElement, inputElement, options);
       toggleButtonState(inputElements, submitButton, options);
     });
-});
+  });
 
   formElement.addEventListener('reset', () => {
     setTimeout(() => {
       toggleButtonState(inputElements, submitButton, options);
-      }, 0);
+    }, 0);
   });
 }
-
 
 const options = {
   formSelector: ".modal__form",
