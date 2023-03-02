@@ -1,3 +1,5 @@
+export default FormValidator;
+
 class FormValidator {
     constructor(settings, formElement) {
       this._inputSelector = settings.inputSelector;
@@ -64,5 +66,3 @@ class FormValidator {
 
 const editFormValidator = new FormValidator();
 editFormValidator.enableValidation();
-
-export default FormValidator;

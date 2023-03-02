@@ -1,4 +1,4 @@
-import FormValidator from "./FormValidator";
+import FormValidator from "./FormValidator.js";
 
 const initialCards = [
 	{
