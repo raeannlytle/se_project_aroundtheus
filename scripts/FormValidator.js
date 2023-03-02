@@ -17,18 +17,18 @@ class FormValidator {
     errorMessageElement.classList.add(this._errorClass);
   }
       
-  _hideInputError() {
+  _hideInputError(inputElement) {
     const errorMessageElement = this.form.querySelector(`#${inputElement.id}-error`);
-    inputElement.classList.remove(inputErrorClass);
+    inputElement.classList.remove(this._inputErrorClass);
     errorMessageElement.textContent = inputElement.validationMessage;
-    errorMessageElement.classList.remove(errorClass);
+    errorMessageElement.classList.remove(this._errorClass);
   }
   
   _toggleButtonState() {
     if (hasInvalidInput(inputElements)) {
-        disableSubmitButton(submitButton, { inactiveButtonClass });
+        disableSubmitButton(submitButton, this._inactiveButtonClass);
     } else {
-        enableSubmitButton(submitButton, { inactiveButtonClass });
+        enableSubmitButton(submitButton, this._inactiveButtonClass);
     }
   }
 
@@ -60,7 +60,7 @@ class FormValidator {
     this._form.addEventListener("submit", (evt) => {
         evt.preventDefault();
     });
-    setEventListeners(formElement, options);
+    setEventListeners(this._form, options);
   };
 }
 
