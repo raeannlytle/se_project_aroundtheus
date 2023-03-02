@@ -1,5 +1,3 @@
-import Card from "./Card.js";
-
 const initialCards = [
 	{
 		name: "Yosemite Valley",
@@ -31,13 +29,6 @@ const initialCards = [
 		link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
 	}
 ];
-
-const cardData = {
-  name: "Lago di Braies",
-	link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
-}
-
-const card = new Card(cardData);
 
 /* Elements */
 const profileEditButton = document.querySelector('#profile-edit-button');
