@@ -1,3 +1,5 @@
+import FormValidator from "./FormValidator";
+
 const initialCards = [
 	{
 		name: "Yosemite Valley",
