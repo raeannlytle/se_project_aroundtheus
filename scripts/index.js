@@ -62,6 +62,16 @@ const cardImageModalClose = document.querySelector("#card-image-close");
 
 const modals = document.querySelectorAll('.modal');
 
+/* Validation */
+const validationSettings = {
+  inputSelector: ".modal__form-input",
+  submitButtonSelector: ".modal__button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible",
+}
+
+
 /* Functions */
 function closePopUp(popUp) {
   document.removeEventListener('keydown', closeByEscape);
