@@ -75,7 +75,4 @@ const options = {
   errorClass: "modal__error_visible",
 };
 
-const editFormValidator = new FormValidator(options, document.querySelector(".modal__form"));
-editFormValidator.enableValidation();
-
 export default FormValidator;

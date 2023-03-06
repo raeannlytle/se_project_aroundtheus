@@ -63,13 +63,19 @@ const cardImageModalClose = document.querySelector("#card-image-close");
 const modals = document.querySelectorAll('.modal');
 
 /* Validation */
-const validationSettings = {
+const options = {
   inputSelector: ".modal__form-input",
   submitButtonSelector: ".modal__button",
   inactiveButtonClass: "modal__button_disabled",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error_visible",
 }
+
+const editFormValidator = new FormValidator(options, document.querySelector(".modal__form"));
+editFormValidator.enableValidation();
+
+const addFormValidator = new FormValidator(options, document.querySelector('.modal__form'));
+addFormValidator.enableValidation();
 
 
 /* Functions */
