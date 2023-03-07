@@ -1,4 +1,5 @@
 import FormValidator from "./FormValidator.js";
+import Card from "./Card.js";
 
 const initialCards = [
 	{
@@ -98,7 +99,7 @@ function closeByEscape(e) {
   }
 }
 
-function renderCard(cardElement, container) {
+function renderCard(cardData, container) {
   const card = new Card(cardData, cardSelector);
   container.prepend(card.getView());
 }
