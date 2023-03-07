@@ -62,6 +62,8 @@ const cardImageModalClose = document.querySelector("#card-image-close");
 
 const modals = document.querySelectorAll('.modal');
 
+const cardSelector = "#card-template";
+
 /* Validation */
 const options = {
   inputSelector: ".modal__form-input",
@@ -97,7 +99,8 @@ function closeByEscape(e) {
 }
 
 function renderCard(cardElement, container) {
-  container.prepend(cardElement);
+  const card = new Card(cardData, cardSelector);
+  container.prepend(card.getView());
 }
   
 function deleteCard(e) {
