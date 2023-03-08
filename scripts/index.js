@@ -1,5 +1,6 @@
 import FormValidator from "./FormValidator.js";
 import Card from "./Card.js";
+import { openPopUp, closePopUp } from "./utils.js";
 
 const initialCards = [
 	{
@@ -84,23 +85,6 @@ const card = new Card(initialCards, cardSelector);
 const getView = card.getView();
 
 /* Functions */
-function closePopUp(popUp) {
-  document.removeEventListener('keydown', closeByEscape);
-  popUp.classList.remove('modal_opened');
-}
-  
-function openPopUp (popUp) {
-  document.addEventListener('keydown', closeByEscape);
-  popUp.classList.add('modal_opened');
-}
- 
-function closeByEscape(e) {
-  if(e.key === "Escape"){
-    const modalOpened = document.querySelector('.modal_opened');
-    closePopUp(modalOpened);
-  }
-}
-
 function renderCard(cardData, container) {
   container.prepend(cardData);
 }
