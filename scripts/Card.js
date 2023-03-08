@@ -5,31 +5,27 @@ class Card {
       
       this._cardSelector = cardSelector;
       this._cardData = cardData;
-
-      this._deleteCard = '.card__delete-button';
-      this._handleCardImageModal = '.card__image';
     }
   
     _setEventListeners() {
-      const likeButton = this._element.querySelector(".card__like-button");
-      const cardDeleteButton = this._element.querySelector(this._deleteCard);
-      const cardImageElement = this._element.querySelector(this._handleCardImageModal);
-      }
+      this._element.querySelector('.card__like-button').addEventListener('click', () => this._handleLikeButton())
+      this._element.querySelector('#card-delete-button').addEventListener('click', () => this._handleDeleteButton())
+      this._element.querySelector('.card__image').addEventListener('click', () => this._handleCardImageModal())
+    }
         
-    _likeButton() {
-      likeButton.addEventListener('click', () => {
-        likeButton.classList.toggle("card__like-button_active");
-      })
+    _handleLikeButton() {
+      this._element.querySelector('.card__like-button').classList.toggle("card__like-button_active");
     }
 
-    _cardDeleteButton() {
-      cardDeleteButton.addEventListener('click', deleteCard);
+    _handleDeleteButton() {
+      this._element.remove();
     }
 
-    _cardImageElement() {
-      cardImageElement.addEventListener('click', () => { 
-        handleCardImageModal(cardData)
-      })
+    _handleCardImageModal(cardData) {
+        modalImage.src = cardData.link;
+        modalImage.alt = cardData.name;
+        modalCaption.textContent = cardData.name;
+        openPopUp(cardImageModal);
     }
   
     _getTemplate() {

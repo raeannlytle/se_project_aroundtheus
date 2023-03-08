@@ -102,8 +102,7 @@ function closeByEscape(e) {
 }
 
 function renderCard(cardData, container) {
-  const card = new Card(cardData, cardSelector, deleteCard);
-  container.prepend(card.getView());
+  container.prepend(cardData);
 }
   
 function deleteCard(e) {
