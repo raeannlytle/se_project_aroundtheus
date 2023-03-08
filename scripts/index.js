@@ -80,6 +80,8 @@ editFormValidator.enableValidation();
 const addFormValidator = new FormValidator(options, document.querySelector('.modal__form'));
 addFormValidator.enableValidation();
 
+const card = new Card(initialCards, cardSelector);
+const getView = card.getView();
 
 /* Functions */
 function closePopUp(popUp) {
@@ -101,7 +103,7 @@ function closeByEscape(e) {
 
 function renderCard(cardData, container) {
   const card = new Card(cardData, cardSelector, deleteCard);
-  container.prepend(card.getCardView());
+  container.prepend(card.getView());
 }
   
 function deleteCard(e) {
