@@ -66,12 +66,6 @@ const modals = document.querySelectorAll('.modal');
 
 const cardSelector = "#card-template";
 
-const cardData = {
-  name: "Yosemite Valley",
-		link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
-
-}
-
 /* Validation */
 const options = {
   inputSelector: ".modal__form-input",
@@ -81,14 +75,11 @@ const options = {
   errorClass: "modal__error_visible",
 }
 
-const editFormValidator = new FormValidator(options, document.querySelector(".modal__form"));
+const editFormValidator = new FormValidator(options, document.querySelector("#profile-edit-form"));
 editFormValidator.enableValidation();
 
-const addFormValidator = new FormValidator(options, document.querySelector('.modal__form'));
+const addFormValidator = new FormValidator(options, document.querySelector("#card-add-form"));
 addFormValidator.enableValidation();
-
-const addCardValidator = new FormValidator(options, document.querySelector(".modal__form"));
-addCardValidator.enableValidation();
 
 /* Functions */
 function renderCard(cardData, container) {
@@ -106,24 +97,6 @@ function handleProfileEditSubmit(e) {
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
   closePopUp(profileEditModal);
-}
-
-function handleCardAddSubmit(e) {
-  e.preventDefault();
-  cardTitle.textContent = cardTitleInput.value;
-  cardImage.src = cardImageInput.value;
-  cardImage.alt = cardImageInput.value;
-  const submitButton = cardAddForm.querySelector(".modal__button");
-  submitButton.classList.add(inactiveButtonClass);
-  submitButton.disabled = true;
-  closePopUp(cardAddModal);
-}
-
-function handleCardImageModal(cardData) {
-  modalImage.src = cardData.link;
-  modalImage.alt = cardData.name;
-  modalCaption.textContent = cardData.name;
-  openPopUp(cardImageModal);
 }
 
 /* Event Listener */ 
@@ -150,7 +123,7 @@ profileEditForm.addEventListener('submit', handleProfileEditSubmit);
 cardAddButton.addEventListener('click',() => {
   openPopUp(cardAddModal);
 });
-  
+
 cardCloseButton.addEventListener('click', () => {
   closePopUp(cardAddModal);
 });
@@ -163,9 +136,11 @@ cardAddForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const name = e.target.title.value;
   const link = e.target.link.value;	
+  const cardData = { name, link };
   renderCard(cardData, cardListElement);
   closePopUp(cardAddModal);
   cardAddForm.reset();
+  addFormValidator.resetValidation();
 });
 	
 initialCards.forEach((cardData) => {
