@@ -111,13 +111,6 @@ function handleCardAddSubmit(e) {
   closePopUp(cardAddModal);
 }
 
-function handleCardImageModal(cardData) {
-  modalImage.src = cardData.link;
-  modalImage.alt = cardData.name;
-  modalCaption.textContent = cardData.name;
-  openPopUp(cardImageModal);
-}
-
 /* Event Listener */ 
 modals.forEach((modal) => {
   modal.addEventListener('mousedown', (e) => {
@@ -162,6 +155,6 @@ cardAddForm.addEventListener('submit', (e) => {
 });
 	
 initialCards.forEach((cardData) => {
-  const cardView = getCardView(cardData);
+  const cardView = getView(cardData);
   renderCard(cardView, cardListElement);
 })
