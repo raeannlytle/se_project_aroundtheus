@@ -1,4 +1,4 @@
-import { openPopUp } from "./utils.js";
+import { openPopUp, modalImage, modalCaption, cardImageModal } from "./utils.js";
 
 class Card {
   constructor(cardData, cardSelector) {
@@ -24,9 +24,6 @@ class Card {
   }
 
   _handleCardImageModal() {
-    const modalImage = document.querySelector("#card-modal-image");
-    const modalCaption = document.querySelector("#card-modal-caption");
-    const cardImageModal = document.querySelector("#card-image-modal");
     modalImage.src = this._link;
     modalImage.alt = this._name;
     modalCaption.textContent = this._name;
