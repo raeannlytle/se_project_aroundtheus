@@ -57,9 +57,6 @@ const cardTemplate = document.querySelector("#card-template").content.firstEleme
 
 const cardAddForm = cardAddModal.querySelector("#card-add-form");
 
-const modalImage = document.querySelector("#card-modal-image");
-const modalCaption = document.querySelector("#card-modal-caption");
-const cardImageModal = document.querySelector("#card-image-modal");
 const cardImageModalClose = document.querySelector("#card-image-close");
 
 const modals = document.querySelectorAll('.modal');
@@ -81,8 +78,8 @@ editFormValidator.enableValidation();
 const addFormValidator = new FormValidator(options, document.querySelector('.modal__form'));
 addFormValidator.enableValidation();
 
-const card = new Card(initialCards, cardSelector);
-const getView = card.getView();
+const addCardValidator = new FormValidator(options, document.querySelector(".modal__form"));
+addCardValidator.enableValidation();
 
 /* Functions */
 function renderCard(cardData, container) {
@@ -93,28 +90,10 @@ function deleteCard(e) {
   e.target.closest(".card").remove();
 }
   
-function getCardView(cardData) {
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImageElement = cardElement.querySelector('.card__image');
-  const cardTitleElement = cardElement.querySelector('.card__title');
-  const likeButton = cardElement.querySelector('.card__like-button');
-  const cardDeleteButton = cardElement.querySelector('#card-delete-button');
-  
-  likeButton.addEventListener('click', () => {
-    likeButton.classList.toggle("card__like-button_active");
-});
-  
-  cardDeleteButton.addEventListener('click', deleteCard);
-
-  cardImageElement.addEventListener('click', () => { 
-    handleCardImageModal(cardData)
-});
-  
-  cardImageElement.src = cardData.link;
-  cardImageElement.alt = cardData.name;
-  cardTitleElement.textContent = cardData.name;
-  return cardElement;
-};
+function createCard(cardData) {
+  const card = new Card(cardData, cardSelector)
+  return card.getView();
+}
 
 /* Event Handler */
 function handleProfileEditSubmit(e) {
