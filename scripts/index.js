@@ -113,6 +113,9 @@ function handleCardAddSubmit(e) {
   cardTitle.textContent = cardTitleInput.value;
   cardImage.src = cardImageInput.value;
   cardImage.alt = cardImageInput.value;
+  const submitButton = cardAddForm.querySelector(".modal__button");
+  submitButton.classList.add(inactiveButtonClass);
+  submitButton.disabled = true;
   closePopUp(cardAddModal);
 }
 
@@ -160,8 +163,7 @@ cardAddForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const name = e.target.title.value;
   const link = e.target.link.value;	
-  const cardView = getCardView({name, link});
-  renderCard(cardView, cardListElement);
+  renderCard(cardData, cardListElement);
   closePopUp(cardAddModal);
   cardAddForm.reset();
 });
