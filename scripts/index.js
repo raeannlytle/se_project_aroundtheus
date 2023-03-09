@@ -80,10 +80,7 @@ function renderCard(cardData, container) {
   const card = new Card(cardData, cardSelector);
   container.prepend(card.getView());
 }
-  
-function deleteCard(e) {
-  e.target.closest(".card").remove();
-}
+
   
 /* Event Handler */
 function handleProfileEditSubmit(e) {
