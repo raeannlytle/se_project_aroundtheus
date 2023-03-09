@@ -42,7 +42,7 @@ class Card {
     return cardElement
   }
   
-  _getView() {
+  getView() {
     this._element = this._getTemplate();
     this._setEventListeners();
 

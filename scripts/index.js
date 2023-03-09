@@ -57,11 +57,20 @@ const cardTemplate = document.querySelector("#card-template").content.firstEleme
 
 const cardAddForm = cardAddModal.querySelector("#card-add-form");
 
+const modalImage = document.querySelector("#card-modal-image");
+const modalCaption = document.querySelector("#card-modal-caption");
+const cardImageModal = document.querySelector("#card-image-modal");
 const cardImageModalClose = document.querySelector("#card-image-close");
 
 const modals = document.querySelectorAll('.modal');
 
 const cardSelector = "#card-template";
+
+const cardData = {
+  name: "Yosemite Valley",
+		link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+
+}
 
 /* Validation */
 const options = {
@@ -83,18 +92,14 @@ addCardValidator.enableValidation();
 
 /* Functions */
 function renderCard(cardData, container) {
-  container.prepend(cardData);
+  const card = new Card(cardData, cardSelector);
+  container.prepend(card.getView());
 }
   
 function deleteCard(e) {
   e.target.closest(".card").remove();
 }
   
-function createCard(cardData) {
-  const card = new Card(cardData, cardSelector)
-  return card.getView();
-}
-
 /* Event Handler */
 function handleProfileEditSubmit(e) {
   e.preventDefault();
@@ -109,6 +114,13 @@ function handleCardAddSubmit(e) {
   cardImage.src = cardImageInput.value;
   cardImage.alt = cardImageInput.value;
   closePopUp(cardAddModal);
+}
+
+function handleCardImageModal(cardData) {
+  modalImage.src = cardData.link;
+  modalImage.alt = cardData.name;
+  modalCaption.textContent = cardData.name;
+  openPopUp(cardImageModal);
 }
 
 /* Event Listener */ 
@@ -155,6 +167,5 @@ cardAddForm.addEventListener('submit', (e) => {
 });
 	
 initialCards.forEach((cardData) => {
-  const cardView = getView(cardData);
-  renderCard(cardView, cardListElement);
+  renderCard(cardData, cardListElement);
 })
