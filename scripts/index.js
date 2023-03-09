@@ -45,20 +45,14 @@ const profileDescriptionInput = document.querySelector ('#profile-description-in
 
 const cardAddModal = document.querySelector("#card-add-modal");
 const cardAddButton = document.querySelector("#profile-add-button");
-const cardTitle = document.querySelector('#card-title');
-const cardImage = document.querySelector('#card-image');
-const cardTitleInput = document.querySelector('#card-title-input');
-const cardImageInput = document.querySelector('#card-image-input');
+
 const cardCloseButton = cardAddModal.querySelector('#card-add-close');
 
 const profileEditForm = profileEditModal.querySelector('#profile-edit-form');
 const cardListElement = document.querySelector('.cards__list');
-const cardTemplate = document.querySelector("#card-template").content.firstElementChild;
 
 const cardAddForm = cardAddModal.querySelector("#card-add-form");
 
-const modalImage = document.querySelector("#card-modal-image");
-const modalCaption = document.querySelector("#card-modal-caption");
 const cardImageModal = document.querySelector("#card-image-modal");
 const cardImageModalClose = document.querySelector("#card-image-close");
 
