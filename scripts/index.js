@@ -102,6 +102,7 @@ modals.forEach((modal) => {
 profileEditButton.addEventListener('click',() => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
+  editFormValidator.resetValidation();
   openPopUp(profileEditModal);
 });
   
@@ -112,6 +113,7 @@ profileCloseButton.addEventListener('click', () => {
 profileEditForm.addEventListener('submit', handleProfileEditSubmit);
 
 cardAddButton.addEventListener('click',() => {
+  addFormValidator.resetValidation();
   openPopUp(cardAddModal);
 });
 
@@ -131,7 +133,6 @@ cardAddForm.addEventListener('submit', (e) => {
   renderCard(cardData, cardListElement);
   closePopUp(cardAddModal);
   cardAddForm.reset();
-  addFormValidator.resetValidation();
 });
 	
 initialCards.forEach((cardData) => {
