@@ -95,14 +95,14 @@ const userInfo = new UserInfo (
     jobSelector: "#profile-description-input",
   });
 
-const container = document.querySelector(".cards__list");
+const cardsList = document.querySelector(".cards__list");
 const section = new Section (
   {
     items: initialCards,
     renderer: renderCard,
   },
   
-  container,
+  cardsList
 );
 
 section.renderItems();

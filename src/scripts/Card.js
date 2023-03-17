@@ -39,7 +39,7 @@ class Card {
     return cardElement
   }
   
-  getView() {
+  renderCard() {
     this._element = this._getTemplate();
     this._setEventListeners();
 
