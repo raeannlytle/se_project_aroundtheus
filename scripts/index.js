@@ -109,6 +109,7 @@ const section = new Section (
 function renderCard(cardData, container) {
   const card = new Card(cardData, cardSelector);
   container.prepend(card.getView());
+  section.addItem(card);
 }
 
   
@@ -118,6 +119,24 @@ function handleProfileEditSubmit(e) {
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
   closePopUp(profileEditModal);
+}
+
+function submitEditProfile(inputValues) {
+  userInfo.setUserInfo({
+    name: inputValues.title,
+    job: inputValues.description,
+  });
+}
+
+function submitAddCard(inputValues) {
+  renderCard({
+    name: inputValues.title,
+    link: inputValues.url,
+  })
+}
+
+function handleImageClick (name, link) {
+  imagePopup.open(name, link);
 }
 
 /* Event Listener */ 
