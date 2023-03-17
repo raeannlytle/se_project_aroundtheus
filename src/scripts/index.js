@@ -95,32 +95,26 @@ const userInfo = new UserInfo (
     jobSelector: "#profile-description-input",
   });
 
+const container = document.querySelector(".cards__list");
 const section = new Section (
   {
     items: initialCards,
     renderer: renderCard,
   },
   
-  cardListElement,
-  section._renderItems()
+  container,
 );
 
+section.renderItems();
+
 /* Functions */
-function renderCard(cardData, container) {
-  const card = new Card(cardData, cardSelector);
-  container.prepend(card.getView());
+function renderCard(cardData) {
+  const card = new Card(cardData, cardSelector, handleImageClick).renderCard();
   section.addItem(card);
 }
 
   
 /* Event Handler */
-function handleProfileEditSubmit(e) {
-  e.preventDefault();
-  profileTitle.textContent = profileTitleInput.value;
-  profileDescription.textContent = profileDescriptionInput.value;
-  closePopUp(profileEditModal);
-}
-
 function submitEditProfile(inputValues) {
   userInfo.setUserInfo({
     name: inputValues.title,
@@ -159,7 +153,7 @@ profileCloseButton.addEventListener('click', () => {
   closePopUp(profileEditModal);
 });
   
-profileEditForm.addEventListener('submit', handleProfileEditSubmit);
+profileEditForm.addEventListener('submit', submitEditProfile);
 
 cardAddButton.addEventListener('click',() => {
   addFormValidator.resetValidation();
