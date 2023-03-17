@@ -1,5 +1,9 @@
 import FormValidator from "./FormValidator.js";
 import Card from "./Card.js";
+import PopupWithForm from "./PopupWithForm.js";
+import PopupWithImage from "./PopupWithImage.js";
+import Section from "./Section.js";
+import UserInfo from "./UserInfo.js";
 import { openPopUp, closePopUp } from "./utils.js";
 
 const initialCards = [
@@ -75,6 +79,32 @@ editFormValidator.enableValidation();
 const addFormValidator = new FormValidator(options, document.querySelector("#card-add-form"));
 addFormValidator.enableValidation();
 
+/* Classes */
+const editFormPopup = new PopupWithForm("#profile-edit-form", submitEditProfile);
+editFormPopup.setEventListeners();
+
+const addFormPopup = new PopupWithForm("#card-add-form", submitAddCard);
+addFormPopup.setEventListeners();
+
+const imagePopup = new PopupWithImage("#card-image-modal", handleImageClick);
+imagePopup.setEventListeners();
+
+const userInfo = new UserInfo (
+  {
+    nameSelector: "#profile-title-input",
+    jobSelector: "#profile-description-input",
+  });
+
+const section = new Section (
+  {
+    items: initialCards,
+    renderer: renderCard,
+  },
+  
+  cardListElement,
+  section._renderItems()
+);
+
 /* Functions */
 function renderCard(cardData, container) {
   const card = new Card(cardData, cardSelector);
@@ -114,7 +144,7 @@ profileEditForm.addEventListener('submit', handleProfileEditSubmit);
 
 cardAddButton.addEventListener('click',() => {
   addFormValidator.resetValidation();
-  openPopUp(cardAddModal);
+  addFormPopup.open();
 });
 
 cardCloseButton.addEventListener('click', () => {
