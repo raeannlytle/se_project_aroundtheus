@@ -94,7 +94,7 @@ const userInfo = new UserInfo (
     nameSelector: "#profile-title-input",
     jobSelector: "#profile-description-input",
   });
-  
+
 const section = new Section (
   {
     items: initialCards,
@@ -119,6 +119,14 @@ function submitEditProfile(inputValues) {
     name: inputValues.title,
     job: inputValues.description,
   });
+}
+
+function openProfileEditForm() {
+  const profileInfo = userInfo.getUserInfo();
+  profileTitleInput.value = profileInfo.name;
+  profileDescriptionInput.value = profileInfo.job;
+  editFormValidator.resetvalidation();
+  editFormPopup.open()
 }
 
 function submitAddCard(inputValues) {
@@ -156,7 +164,7 @@ profileEditForm.addEventListener('submit', submitEditProfile);
 
 cardAddButton.addEventListener('click',() => {
   addFormValidator.resetValidation();
-  addFormPopup.open();
+  openPopUp(cardAddModal);
 });
 
 cardCloseButton.addEventListener('click', () => {
@@ -176,7 +184,3 @@ cardAddForm.addEventListener('submit', (e) => {
   closePopUp(cardAddModal);
   cardAddForm.reset();
 });
-	
-initialCards.forEach((cardData) => {
-  renderCard(cardData, cardListElement);
-})
