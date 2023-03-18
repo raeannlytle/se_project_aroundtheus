@@ -78,10 +78,10 @@ const addFormValidator = new FormValidator(options, document.querySelector("#car
 addFormValidator.enableValidation();
 
 /* Classes */
-const editFormPopup = new PopupWithForm("#profile-edit-form", submitEditProfile);
+const editFormPopup = new PopupWithForm("#profile-edit-modal", submitEditProfile);
 editFormPopup.setEventListeners();
 
-const addFormPopup = new PopupWithForm("#card-add-form", submitAddCard);
+const addFormPopup = new PopupWithForm("#card-add-modal", submitAddCard);
 addFormPopup.setEventListeners();
 
 const imagePopup = new PopupWithImage("#card-image-modal", handleImageClick);
