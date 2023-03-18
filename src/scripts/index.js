@@ -123,7 +123,7 @@ function openProfileEditForm() {
   const profileInfo = userInfo.getUserInfo();
   profileTitleInput.value = profileInfo.name;
   profileDescriptionInput.value = profileInfo.job;
-  editFormValidator.resetvalidation();
+  editFormValidator.resetValidation();
   editFormPopup.open()
 }
 
