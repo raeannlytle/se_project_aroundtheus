@@ -78,7 +78,7 @@ const addFormValidator = new FormValidator(options, document.querySelector("#car
 addFormValidator.enableValidation();
 
 /* Classes */
-const editFormPopup = new PopupWithForm("#profile-edit-modal");
+const editFormPopup = new PopupWithForm("#profile-edit-modal", submitEditProfile);
 editFormPopup.setEventListeners();
 
 const addFormPopup = new PopupWithForm("#card-add-modal");
