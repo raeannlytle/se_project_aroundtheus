@@ -78,13 +78,13 @@ const addFormValidator = new FormValidator(options, document.querySelector("#car
 addFormValidator.enableValidation();
 
 /* Classes */
-const editFormPopup = new PopupWithForm("#profile-edit-modal", submitEditProfile);
+const editFormPopup = new PopupWithForm("#profile-edit-modal");
 editFormPopup.setEventListeners();
 
-const addFormPopup = new PopupWithForm("#card-add-modal", submitAddCard);
+const addFormPopup = new PopupWithForm("#card-add-modal");
 addFormPopup.setEventListeners();
 
-const imagePopup = new PopupWithImage("#card-image-modal", handleImageClick);
+const imagePopup = new PopupWithImage("#card-image-modal");
 imagePopup.setEventListeners();
 
 const userInfo = new UserInfo (
