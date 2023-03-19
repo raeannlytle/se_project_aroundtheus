@@ -5,6 +5,7 @@ import PopupWithImage from "./PopupWithImage.js";
 import Section from "./Section.js";
 import UserInfo from "./UserInfo.js";
 import { openPopUp, closePopUp } from "./utils.js";
+import "../pages/index.css"
 
 const initialCards = [
 	{
