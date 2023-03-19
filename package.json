@@ -1,27 +1,27 @@
 {
-    "name": "se_project_aroundtheus",
-    "version": "0.0.1",
-    "description": "Software Engineering Project",
-    "main": "index.js",
-    "scripts": {
-        "build": "webpack --mode production",
-        "dev": "webpack serve"
-    },
-    "author": "raeannlytle",
-    "license": "ISC",
-    "devDependencies": {
-        "webpack": "^5.76.2",
-        "webpack-cli": "^5.0.1",
-        "webpack-dev-server": "^4.12.0"
-    },
-    "dependencies": {
-        "build": "^0.1.4"
-    },
-    "repository": {
-        "type": "git",
-        "url": "se_project_aroundtheus"
-    },
-    "keywords": [
-        "practicum"
-    ]
+  "name": "se_project_aroundtheus",
+  "version": "0.0.1",
+  "description": "Software Engineering Project",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve"
+  },
+  "author": "raeannlytle",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.12.0"
+  },
+  "dependencies": {
+    "build": "^0.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "se_project_aroundtheus"
+  },
+  "keywords": [
+    "practicum"
+  ]
 }
