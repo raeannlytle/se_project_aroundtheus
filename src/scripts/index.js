@@ -79,14 +79,22 @@ const addFormValidator = new FormValidator(options, document.querySelector("#car
 addFormValidator.enableValidation();
 
 /* Classes */
-const editFormPopup = new PopupWithForm("#profile-edit-modal", submitEditProfile);
-editFormPopup.setEventListeners();
+const editFormPopup = new PopupWithForm("#profile-edit-modal");
+editFormPopup.setEventListeners(() => {
+  const inputValues = editFormPopup.getInputValues();
+  submitEditProfile(inputValues);
+});
 
-const addFormPopup = new PopupWithForm("#card-add-modal", submitAddCard);
-addFormPopup.setEventListeners();
+const addFormPopup = new PopupWithForm("#card-add-modal");
+addFormPopup.setEventListeners(() => {
+  const inputValues = addFormPopup.getInputValues();
+  submitAddCard(inputValues);
+});
 
-const imagePopup = new PopupWithImage("#card-image-modal", handleImageClick);
+
+const imagePopup = new PopupWithImage("#card-image-modal");
 imagePopup.setEventListeners();
+handleImageClick();
 
 const userInfo = new UserInfo (
   {
