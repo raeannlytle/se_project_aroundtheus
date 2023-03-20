@@ -10,6 +10,7 @@
   "author": "raeannlytle",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
     "babel-loader": "^9.1.2",
     "clean-webpack-plugin": "^4.0.0",
