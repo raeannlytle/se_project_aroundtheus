@@ -82,10 +82,10 @@ addFormValidator.enableValidation();
 const editFormPopup = new PopupWithForm("#profile-edit-modal", submitEditProfile);
 editFormPopup.setEventListeners();
 
-const addFormPopup = new PopupWithForm("#card-add-modal");
+const addFormPopup = new PopupWithForm("#card-add-modal", submitAddCard);
 addFormPopup.setEventListeners();
 
-const imagePopup = new PopupWithImage("#card-image-modal");
+const imagePopup = new PopupWithImage("#card-image-modal", handleImageClick);
 imagePopup.setEventListeners();
 
 const userInfo = new UserInfo (
