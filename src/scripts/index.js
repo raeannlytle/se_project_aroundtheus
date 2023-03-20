@@ -93,13 +93,14 @@ addFormPopup.setEventListeners(() => {
 
 
 const imagePopup = new PopupWithImage("#card-image-modal");
-imagePopup.setEventListeners();
-handleImageClick();
+imagePopup.setEventListeners(() => {
+  handleImageClick();
+});
 
 const userInfo = new UserInfo (
   {
-    nameSelector: "#profile-title-input",
-    jobSelector: "#profile-description-input",
+    nameSelector: "#profile-title",
+    jobSelector: "#profile-description",
   });
 
 const section = new Section (
@@ -121,11 +122,15 @@ function renderCard(cardData) {
 
   
 /* Event Handler */
-function submitEditProfile(inputValues) {
+function submitEditProfile(evt) {
+  evt.preventDefault();
+  const title = profileTitleInput.value;
+  const description = profileDescriptionInput.value;
   userInfo.setUserInfo({
-    name: inputValues.title,
-    job: inputValues.description,
+    name: title,
+    job: description,
   });
+  editFormPopup.close();
 }
 
 function openProfileEditForm() {
