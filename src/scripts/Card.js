@@ -1,18 +1,24 @@
 import { cardImageModal } from "../utils/constants";
 
 class Card {
-  constructor(cardData, cardSelector) {
+  constructor({ cardData, handleImageClick }, cardSelector) {
     this._name = cardData.name;
     this._link = cardData.link;
       
     this._cardSelector = cardSelector;
     this._cardData = cardData;
+    this._handleImageClick = handleImageClick;
   }
   
   _setEventListeners() {
     this._element.querySelector('.card__like-button').addEventListener('click', () => this._handleLikeButton())
     this._element.querySelector('#card-delete-button').addEventListener('click', () => this._handleDeleteButton())
-    this._element.querySelector('.card__image').addEventListener('click', () => this._handleCardImageModal())
+    this._element.querySelector('.card__image').addEventListener('click', () => {
+      this._handleImageClick({
+        name: this._name,
+        src: this._link,
+      })
+    });
   }
         
   _handleLikeButton() {
@@ -23,7 +29,7 @@ class Card {
     this._element.remove();
   }
 
-  _handleCardImageModal() {
+  _handleImageClick() {
     const modalImage = document.querySelector('.modal__image-card');
     const modalCaption = document.querySelector('.modal__caption-card');
 
