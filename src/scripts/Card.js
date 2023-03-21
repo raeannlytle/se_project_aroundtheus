@@ -30,7 +30,6 @@ class Card {
     modalImage.src = this._link;
     modalImage.alt = this._name;
     modalCaption.textContent = this._name;
-    openPopUp(cardImageModal);
   }
   
   _getTemplate() {

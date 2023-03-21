@@ -56,7 +56,7 @@ addFormPopup.setEventListeners(() => {
 
 const imagePopup = new PopupWithImage("#card-image-modal");
 imagePopup.setEventListeners(() => {
-  handleImageClick();
+  imagePopup.open();
 });
 
 const userInfo = new UserInfo (
