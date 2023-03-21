@@ -8,19 +8,15 @@ import "../pages/index.css"
 
 import {
   profileEditButton,
-  profileEditModal,
   profileCloseButton,
   profileTitleInput,
   profileDescriptionInput,
-  cardAddModal,
   cardAddButton,
   cardCloseButton,
   profileEditForm,
   cardListElement,
   cardAddForm,
-  cardImageModal,
   cardImageModalClose,
-  modals,
   cardSelector,
   initialCards,
 } from '../utils/constants.js';
