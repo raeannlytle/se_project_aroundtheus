@@ -1,9 +1,9 @@
-import FormValidator from "../scripts/FormValidator.js";
-import Card from "../scripts/Card.js";
-import PopupWithForm from "../scripts/PopupWithForm.js";
-import PopupWithImage from "../scripts/PopupWithImage.js";
-import Section from "../scripts/Section.js";
-import UserInfo from "../scripts/UserInfo.js";
+import FormValidator from "../components/FormValidator.js";
+import Card from "../components/Card.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import Section from "../components/Section.js";
+import UserInfo from "../components/UserInfo.js";
 import "../pages/index.css"
 
 import {
@@ -39,8 +39,7 @@ addFormValidator.enableValidation();
 /* Classes */
 const editFormPopup = new PopupWithForm("#profile-edit-modal");
 editFormPopup.setEventListeners(() => {
-  const inputValues = editFormPopup.getInputValues();
-  submitEditProfile(inputValues);
+  editFormPopup.open();
 });
 
 const addFormPopup = new PopupWithForm("#card-add-modal");
@@ -84,17 +83,26 @@ function renderCard(cardData) {
     }
   }, cardSelector).renderCard();
   section.addItem(card);
+  
+}
+
+const { name, job } = userInfo.getUserInfo();
+const setUserInfo = ({ name, job }) => {
+  profileTitleInput.value = name;
+  profileDescriptionInput.value = job;
 }
 
 /*Profile Form Event Listeners*/
 profileEditButton.addEventListener('click',() => {
   editFormPopup.open();
   editFormValidator.resetValidation();
+  setUserInfo(name, job);
 });
-  
+
 profileCloseButton.addEventListener('click', () => {
   editFormPopup.close();
 });
+
   
 profileEditForm.addEventListener('submit', () => {
   const title = profileTitleInput.value;
