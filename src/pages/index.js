@@ -86,8 +86,7 @@ function renderCard(cardData) {
   section.addItem(card);
 }
 
-
-/* Event Listener */ 
+/*Profile Form Event Listeners*/
 profileEditButton.addEventListener('click',() => {
   editFormPopup.open();
   editFormValidator.resetValidation();
@@ -107,19 +106,12 @@ profileEditForm.addEventListener('submit', () => {
   editFormPopup.close();
 });
 
+/*Card Form Event Listener*/
 cardAddButton.addEventListener('click',() => {
   addFormValidator.resetValidation();
   addFormPopup.open();
 });
 
-cardCloseButton.addEventListener('click', () => {
-  addFormPopup.close();
-});
-	
-cardImageModalClose.addEventListener('click', () => { 
-  imagePopup.close();
-});
-	
 cardAddForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const name = e.target.title.value;
@@ -128,4 +120,13 @@ cardAddForm.addEventListener('submit', (e) => {
   renderCard(cardData, cardListElement);
   addFormPopup.close();
   cardAddForm.reset();
+});
+
+cardCloseButton.addEventListener('click', () => {
+  addFormPopup.close();
+});
+
+/*Card Image Event Listener*/
+cardImageModalClose.addEventListener('click', () => { 
+  imagePopup.close();
 });
