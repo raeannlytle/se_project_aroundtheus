@@ -74,8 +74,6 @@ const section = new Section (
   cardListElement,
 );
 
-section.renderItems();
-
 /* Functions */
 function renderCard(cardData) {
   const card = new Card(cardData, cardSelector, handleImageClick).renderCard();
@@ -128,7 +126,7 @@ profileEditButton.addEventListener('click',() => {
 });
   
 profileCloseButton.addEventListener('click', () => {
-  closePopUp(profileEditModal);
+  editFormPopup.close();
 });
   
 profileEditForm.addEventListener('submit', submitEditProfile);
@@ -139,11 +137,11 @@ cardAddButton.addEventListener('click',() => {
 });
 
 cardCloseButton.addEventListener('click', () => {
-  closePopUp(cardAddModal);
+  addFormPopup.close();
 });
 	
 cardImageModalClose.addEventListener('click', () => { 
-  closePopUp(cardImageModal);
+  imagePopup.close();
 });
 	
 cardAddForm.addEventListener('submit', (e) => {
