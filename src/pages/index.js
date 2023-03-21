@@ -108,13 +108,6 @@ function openProfileEditForm() {
   editFormPopup.open()
 }
 
-function submitAddCard(inputValues) {
-  renderCard({
-    name: inputValues.title,
-    link: inputValues.url,
-  })
-}
-
 /* Event Listener */ 
 profileEditButton.addEventListener('click',() => {
   openProfileEditForm();
