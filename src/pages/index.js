@@ -103,7 +103,6 @@ profileCloseButton.addEventListener('click', () => {
   editFormPopup.close();
 });
 
-  
 profileEditForm.addEventListener('submit', () => {
   const title = profileTitleInput.value;
   const description = profileDescriptionInput.value;
