@@ -1,3 +1,5 @@
+import { cardImageModal } from "../utils/constants";
+
 class Card {
   constructor(cardData, cardSelector) {
     this._name = cardData.name;
@@ -28,7 +30,7 @@ class Card {
     modalImage.src = this._link;
     modalImage.alt = this._name;
     modalCaption.textContent = this._name;
-    imagePopUp.open();
+    openPopUp(cardImageModal);
   }
   
   _getTemplate() {
