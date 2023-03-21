@@ -1,70 +1,32 @@
-import FormValidator from "./FormValidator.js";
-import Card from "./Card.js";
-import PopupWithForm from "./PopupWithForm.js";
-import PopupWithImage from "./PopupWithImage.js";
-import Section from "./Section.js";
-import UserInfo from "./UserInfo.js";
-import { openPopUp, closePopUp } from "./utils.js";
+import FormValidator from "../scripts/FormValidator.js";
+import Card from "../scripts/Card.js";
+import PopupWithForm from "../scripts/PopupWithForm.js";
+import PopupWithImage from "../scripts/PopupWithImage.js";
+import Section from "../scripts/Section.js";
+import UserInfo from "../scripts/UserInfo.js";
 import "../pages/index.css"
 
-const initialCards = [
-	{
-		name: "Yosemite Valley",
-		link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
-	
-	},
-	{
-		name: "Lake Louise",
-		link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lake-louise.jpg",
-
-	},
-	{
-		name: "Bald Mountains",
-		link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/bald-mountains.jpg",
-	
-	},
-	{
-		name: "Latemar",
-		link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/latemar.jpg",
-	
-	},
-	{
-		name: "Vanoise National Park",
-		link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/vanoise.jpg",
-	
-	},
-	{
-		name: "Lago di Braies",
-		link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
-	}
-];
-
-/* Elements */
-const profileEditButton = document.querySelector('#profile-edit-button');
-const profileEditModal = document.querySelector('#profile-edit-modal'); 
-const profileCloseButton = document.querySelector('#modal-close-button');
-const profileTitleInput = document.querySelector('#profile-title-input');
-const profileDescriptionInput = document.querySelector ('#profile-description-input');
-
-const cardAddModal = document.querySelector("#card-add-modal");
-const cardAddButton = document.querySelector("#profile-add-button");
-
-const cardCloseButton = cardAddModal.querySelector('#card-add-close');
-
-const profileEditForm = profileEditModal.querySelector('#profile-edit-form');
-const cardListElement = document.querySelector('.cards__list');
-
-const cardAddForm = cardAddModal.querySelector("#card-add-form");
-
-const cardImageModal = document.querySelector("#card-image-modal");
-const cardImageModalClose = document.querySelector("#card-image-close");
-
-const modals = document.querySelectorAll('.modal');
-
-const cardSelector = "#card-template";
+import {
+  profileEditButton,
+  profileEditModal,
+  profileCloseButton,
+  profileTitleInput,
+  profileDescriptionInput,
+  cardAddModal,
+  cardAddButton,
+  cardCloseButton,
+  profileEditForm,
+  cardListElement,
+  cardAddForm,
+  cardImageModal,
+  cardImageModalClose,
+  modals,
+  cardSelector,
+  initialCards,
+} from '../utils/constants.js';
 
 /* Validation */
-const options = {
+export const options = {
   inputSelector: ".modal__form-input",
   submitButtonSelector: ".modal__button",
   inactiveButtonClass: "modal__button_disabled",
@@ -153,20 +115,12 @@ function handleImageClick (name, link) {
 }
 
 /* Event Listener */ 
-modals.forEach((modal) => {
-  modal.addEventListener('mousedown', (e) => {
-    if(e.target.classList.contains('modal')) {
-      closePopUp(modal);
-    };
-  });
-}); 
-
 profileEditButton.addEventListener('click',() => {
   openProfileEditForm();
 });
   
 profileCloseButton.addEventListener('click', () => {
-  closePopUp(profileEditModal);
+  editFormPopup.close();
 });
   
 profileEditForm.addEventListener('submit', submitEditProfile);
@@ -177,11 +131,11 @@ cardAddButton.addEventListener('click',() => {
 });
 
 cardCloseButton.addEventListener('click', () => {
-  closePopUp(cardAddModal);
+  addFormPopup.close();
 });
 	
 cardImageModalClose.addEventListener('click', () => { 
-  closePopUp(cardImageModal);
+  imagePopup.close();
 });
 	
 cardAddForm.addEventListener('submit', (e) => {
@@ -190,6 +144,6 @@ cardAddForm.addEventListener('submit', (e) => {
   const link = e.target.link.value;	
   const cardData = { name, link };
   renderCard(cardData, cardListElement);
-  closePopUp(cardAddModal);
+  addFormPopup.close();
   cardAddForm.reset();
 });
