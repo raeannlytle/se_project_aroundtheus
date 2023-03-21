@@ -86,17 +86,17 @@ function renderCard(cardData) {
   
 }
 
-const { name, job } = userInfo.getUserInfo();
-const setUserInfo = ({ name, job }) => {
+const setUserForm = ({ name, job }) => {
   profileTitleInput.value = name;
   profileDescriptionInput.value = job;
 }
 
 /*Profile Form Event Listeners*/
 profileEditButton.addEventListener('click',() => {
+  const { name, job } = userInfo.getUserInfo();
+  setUserForm({ name, job }); 
   editFormPopup.open();
   editFormValidator.resetValidation();
-  setUserInfo(name, job);
 });
 
 profileCloseButton.addEventListener('click', () => {

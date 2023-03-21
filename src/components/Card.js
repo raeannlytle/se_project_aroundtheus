@@ -27,14 +27,6 @@ class Card {
     this._element.remove();
   }
 
-  _handleImageClick() {
-    const modalImage = document.querySelector('.modal__image-card');
-    const modalCaption = document.querySelector('.modal__caption-card');
-
-    modalImage.src = this._link;
-    modalImage.alt = this._name;
-    modalCaption.textContent = this._name;
-  }
   
   _getTemplate() {
     const cardElement = document
