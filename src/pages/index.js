@@ -99,17 +99,10 @@ function submitEditProfile(evt) {
   editFormPopup.close();
 }
 
-function openProfileEditForm() {
-  const profileInfo = userInfo.getUserInfo();
-  profileTitleInput.value = profileInfo.name;
-  profileDescriptionInput.value = profileInfo.job;
-  editFormValidator.resetValidation();
-  editFormPopup.open()
-}
-
 /* Event Listener */ 
 profileEditButton.addEventListener('click',() => {
-  openProfileEditForm();
+  editFormPopup.open();
+  editFormValidator.resetValidation();
 });
   
 profileCloseButton.addEventListener('click', () => {
