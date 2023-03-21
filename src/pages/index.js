@@ -86,18 +86,6 @@ function renderCard(cardData) {
   section.addItem(card);
 }
 
-  
-/* Event Handler */
-function submitEditProfile(evt) {
-  evt.preventDefault();
-  const title = profileTitleInput.value;
-  const description = profileDescriptionInput.value;
-  userInfo.setUserInfo({
-    name: title,
-    job: description,
-  });
-  editFormPopup.close();
-}
 
 /* Event Listener */ 
 profileEditButton.addEventListener('click',() => {
@@ -109,7 +97,15 @@ profileCloseButton.addEventListener('click', () => {
   editFormPopup.close();
 });
   
-profileEditForm.addEventListener('submit', submitEditProfile);
+profileEditForm.addEventListener('submit', () => {
+  const title = profileTitleInput.value;
+  const description = profileDescriptionInput.value;
+  userInfo.setUserInfo({
+    name: title,
+    job: description,
+  })
+  editFormPopup.close();
+});
 
 cardAddButton.addEventListener('click',() => {
   addFormValidator.resetValidation();
