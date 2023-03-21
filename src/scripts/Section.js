@@ -1,13 +1,17 @@
-import Card from "../scripts/Card.js";
-
-export default class Section {
-  constructor (items, renderer) {
+class Section {
+  constructor ({ items, renderer }, cardsList) {
     this._items = items;
     this._renderer = renderer;
+    this._cardsList = cardsList;
   }
-  
-  renderer(items, cardListElement) {
-    const card = new Card(items, '#card');
-    cardListElement.prepend(card.renderCard());
-  };
+
+  renderItems() {
+    this._items.forEach((item) => this._renderer(item));
+  }
+
+  addItem(item) {
+    this._cardsList.prepend(item);
+  }
 }
+
+export default Section;
