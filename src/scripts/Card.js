@@ -1,3 +1,5 @@
+import Popup from "../scripts/Popup.js";
+
 class Card {
   constructor(cardData, cardSelector) {
     this._name = cardData.name;
@@ -22,10 +24,15 @@ class Card {
   }
 
   _handleCardImageModal() {
+    const modalImage = document.querySelector(".modal__image-card");
+    const modalCaption = document.querySelector(".modal__caption-card");
     modalImage.src = this._link;
     modalImage.alt = this._name;
     modalCaption.textContent = this._name;
     openPopUp(cardImageModal);
+
+    const popup = new Popup({ popupSelector: "#card-image-modal"});
+    popup.open(document.querySelector('#card-image-modal'));
   }
   
   _getTemplate() {
