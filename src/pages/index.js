@@ -6,8 +6,27 @@ import Section from "../scripts/Section.js";
 import UserInfo from "../scripts/UserInfo.js";
 import "../pages/index.css"
 
+import {
+  profileEditButton,
+  profileEditModal,
+  profileCloseButton,
+  profileTitleInput,
+  profileDescriptionInput,
+  cardAddModal,
+  cardAddButton,
+  cardCloseButton,
+  profileEditForm,
+  cardListElement,
+  cardAddForm,
+  cardImageModal,
+  cardImageModalClose,
+  modals,
+  cardSelector,
+  initialCards,
+} from '../utils/constants.js';
+
 /* Validation */
-const options = {
+export const options = {
   inputSelector: ".modal__form-input",
   submitButtonSelector: ".modal__button",
   inactiveButtonClass: "modal__button_disabled",
@@ -54,8 +73,6 @@ const section = new Section (
   
   cardListElement,
 );
-
-section.renderItems();
 
 /* Functions */
 function renderCard(cardData) {
@@ -109,7 +126,7 @@ profileEditButton.addEventListener('click',() => {
 });
   
 profileCloseButton.addEventListener('click', () => {
-  closePopUp(profileEditModal);
+  editFormPopup.close();
 });
   
 profileEditForm.addEventListener('submit', submitEditProfile);
@@ -120,11 +137,11 @@ cardAddButton.addEventListener('click',() => {
 });
 
 cardCloseButton.addEventListener('click', () => {
-  closePopUp(cardAddModal);
+  addFormPopup.close();
 });
 	
 cardImageModalClose.addEventListener('click', () => { 
-  closePopUp(cardImageModal);
+  imagePopup.close();
 });
 	
 cardAddForm.addEventListener('submit', (e) => {
