@@ -104,6 +104,8 @@ profileCloseButton.addEventListener('click', () => {
 });
 
 profileEditForm.addEventListener('submit', () => {
+  const title = profileTitleInput.value;
+  const description = profileDescriptionInput.value;
   userInfo.setUserInfo({
     name: title,
     job: description,
