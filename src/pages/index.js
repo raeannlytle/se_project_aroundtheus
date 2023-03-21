@@ -45,8 +45,7 @@ editFormPopup.setEventListeners(() => {
 
 const addFormPopup = new PopupWithForm("#card-add-modal");
 addFormPopup.setEventListeners(() => {
-  const inputValues = addFormPopup.getInputValues();
-  submitAddCard(inputValues);
+  addFormPopup.open();
 });
 
 
