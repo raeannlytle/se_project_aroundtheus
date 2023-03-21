@@ -6,8 +6,27 @@ import Section from "../scripts/Section.js";
 import UserInfo from "../scripts/UserInfo.js";
 import "../pages/index.css"
 
+import {
+  profileEditButton,
+  profileEditModal,
+  profileCloseButton,
+  profileTitleInput,
+  profileDescriptionInput,
+  cardAddModal,
+  cardAddButton,
+  cardCloseButton,
+  profileEditForm,
+  cardListElement,
+  cardAddForm,
+  cardImageModal,
+  cardImageModalClose,
+  modals,
+  cardSelector,
+  initialCards,
+} from '../utils/constants.js';
+
 /* Validation */
-const options = {
+export const options = {
   inputSelector: ".modal__form-input",
   submitButtonSelector: ".modal__button",
   inactiveButtonClass: "modal__button_disabled",
