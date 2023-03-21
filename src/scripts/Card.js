@@ -1,5 +1,3 @@
-import { cardImageModal } from "../utils/constants";
-
 class Card {
   constructor({ cardData, handleImageClick }, cardSelector) {
     this._name = cardData.name;
