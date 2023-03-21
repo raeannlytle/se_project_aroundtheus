@@ -28,25 +28,6 @@ export default class PopupWithForm extends Popup {
 
   setEventListeners() {
     super.setEventListeners();
-    
-    profileEditButton.addEventListener('click',() => {
-      const { name, job } = userInfo.getUserInfo();
-      setUserForm({ name, job }); 
-      editFormPopup.open();
-      editFormValidator.resetValidation();
-    });
-    
-    profileCloseButton.addEventListener('click', () => {
-      editFormPopup.close();
-    });
-    
-    profileEditForm.addEventListener('submit', () => {
-      userInfo.setUserInfo({
-        name: title,
-        job: description,
-      })
-      editFormPopup.close();
-    });
 
 
     if (this._popupForm && this._handleFormSubmit){

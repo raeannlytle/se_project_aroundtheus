@@ -92,7 +92,24 @@ const setUserForm = ({ name, job }) => {
 }
 
 /*Profile Form Event Listeners*/
+profileEditButton.addEventListener('click',() => {
+  const { name, job } = userInfo.getUserInfo();
+  setUserForm({ name, job }); 
+  editFormPopup.open();
+  editFormValidator.resetValidation();
+});
 
+profileCloseButton.addEventListener('click', () => {
+  editFormPopup.close();
+});
+
+profileEditForm.addEventListener('submit', () => {
+  userInfo.setUserInfo({
+    name: title,
+    job: description,
+  })
+  editFormPopup.close();
+});
 
 /*Card Form Event Listener*/
 cardAddButton.addEventListener('click',() => {
@@ -114,7 +131,3 @@ cardCloseButton.addEventListener('click', () => {
   addFormPopup.close();
 });
 
-/*Card Image Event Listener*/
-cardImageModalClose.addEventListener('click', () => { 
-  imagePopup.close();
-});
