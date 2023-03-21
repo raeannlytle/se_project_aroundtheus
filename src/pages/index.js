@@ -78,7 +78,16 @@ section.renderItems();
 
 /* Functions */
 function renderCard(cardData) {
-  const card = new Card(cardData, cardSelector, handleImageClick).renderCard();
+  const card = new Card({
+    cardData, 
+    handleImageClick: (cardData) => {
+      const image = {
+        name: cardData.name,
+        link: cardData.src,
+      }
+      imagePopup.open(image.name, image.link);
+    }
+  }, cardSelector).renderCard();
   section.addItem(card);
 }
 
@@ -108,10 +117,6 @@ function submitAddCard(inputValues) {
     name: inputValues.title,
     link: inputValues.url,
   })
-}
-
-function handleImageClick (name, link) {
-  imagePopup.open(name, link);
 }
 
 /* Event Listener */ 
