@@ -74,6 +74,8 @@ const section = new Section (
   cardListElement,
 );
 
+section.renderItems();
+
 /* Functions */
 function renderCard(cardData) {
   const card = new Card(cardData, cardSelector, handleImageClick).renderCard();
@@ -113,14 +115,6 @@ function handleImageClick (name, link) {
 }
 
 /* Event Listener */ 
-modals.forEach((modal) => {
-  modal.addEventListener('mousedown', (e) => {
-    if(e.target.classList.contains('modal')) {
-      closePopUp(modal);
-    };
-  });
-}); 
-
 profileEditButton.addEventListener('click',() => {
   openProfileEditForm();
 });
@@ -150,6 +144,6 @@ cardAddForm.addEventListener('submit', (e) => {
   const link = e.target.link.value;	
   const cardData = { name, link };
   renderCard(cardData, cardListElement);
-  closePopUp(cardAddModal);
+  addFormPopup.close();
   cardAddForm.reset();
 });
