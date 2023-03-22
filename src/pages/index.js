@@ -74,8 +74,13 @@ function renderCard(cardData) {
   
 }
 
-function handleProfileFormSubmit() {
-  userInfo.getUserInfo();
+function handleProfileFormSubmit(data) {
+  const title = data.title;
+  const description = data.description;
+  userInfo.setUserInfo({
+    name: title,
+    job: description,
+  });
   editFormPopup.close();
 }
 
