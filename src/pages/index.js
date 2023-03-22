@@ -8,15 +8,10 @@ import "../pages/index.css"
 
 import {
   profileEditButton,
-  profileCloseButton,
   profileTitleInput,
   profileDescriptionInput,
   cardAddButton,
-  cardCloseButton,
-  profileEditForm,
   cardListElement,
-  cardAddForm,
-  cardImageModalClose,
   cardSelector,
   initialCards,
 } from '../utils/constants.js';
@@ -37,23 +32,14 @@ const addFormValidator = new FormValidator(options, document.querySelector("#car
 addFormValidator.enableValidation();
 
 /* Classes */
-const editFormPopup = new PopupWithForm("#profile-edit-modal");
-editFormPopup.setEventListeners((handleFormSubmit) => {
-  editFormPopup.open();
-  handleFormSubmit();
-});
+const editFormPopup = new PopupWithForm("#profile-edit-modal", handleProfileFormSubmit);
+editFormPopup.setEventListeners();
 
-const addFormPopup = new PopupWithForm("#card-add-modal");
-addFormPopup.setEventListeners((handleFormSubmit) => {
-  addFormPopup.open();
-  handleFormSubmit();
-});
-
+const addFormPopup = new PopupWithForm("#card-add-modal", handleAddFormSubmit);
+addFormPopup.setEventListeners();
 
 const imagePopup = new PopupWithImage("#card-image-modal");
-imagePopup.setEventListeners(() => {
-  imagePopup.open();
-});
+imagePopup.setEventListeners();
 
 const userInfo = new UserInfo (
   {
@@ -86,6 +72,15 @@ function renderCard(cardData) {
   }, cardSelector).renderCard();
   section.addItem(card);
   
+}
+
+function handleProfileFormSubmit() {
+  userInfo.getUserInfo();
+  editFormPopup.close();
+}
+
+function handleAddFormSubmit() {
+  addFormPopup.close();
 }
 
 const setUserForm = ({ name, job }) => {
