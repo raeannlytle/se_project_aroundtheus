@@ -85,8 +85,11 @@ function handleProfileFormSubmit(data) {
 }
 
 function handleAddFormSubmit(inputValues) {
-  console.log(inputValues);
-  renderCard({ name: inputValues.title, link: inputValues.link });
+  const card = {
+    name: inputValues.title,
+    link: inputValues.link,
+  }
+  renderCard(card);
   addFormPopup.close();
 }
 
