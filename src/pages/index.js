@@ -99,10 +99,6 @@ profileEditButton.addEventListener('click',() => {
   editFormValidator.resetValidation();
 });
 
-profileCloseButton.addEventListener('click', () => {
-  editFormPopup.close();
-});
-
 profileEditForm.addEventListener('submit', () => {
   const title = profileTitleInput.value;
   const description = profileDescriptionInput.value;
@@ -129,7 +125,4 @@ cardAddForm.addEventListener('submit', (e) => {
   cardAddForm.reset();
 });
 
-cardCloseButton.addEventListener('click', () => {
-  addFormPopup.close();
-});
 
