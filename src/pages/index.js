@@ -84,8 +84,8 @@ function handleProfileFormSubmit(data) {
   editFormPopup.close();
 }
 
-function handleAddFormSubmit(cardData) {
-  renderCard({ name: cardData.title, link: cardData.url });
+function handleAddFormSubmit(inputValues) {
+  renderCard({ name: inputValues, link: inputValues.url });
   addFormPopup.close();
 }
 
