@@ -84,7 +84,8 @@ function handleProfileFormSubmit(data) {
   editFormPopup.close();
 }
 
-function handleAddFormSubmit() {
+function handleAddFormSubmit(cardData) {
+  renderCard({ name: cardData.title, link: cardData.url });
   addFormPopup.close();
 }
 
@@ -99,29 +100,8 @@ profileEditButton.addEventListener('click',() => {
   editFormPopup.open();
   editFormValidator.resetValidation();
 });
-/*
-profileEditForm.addEventListener('submit', () => {
-  const title = profileTitleInput.value;
-  const description = profileDescriptionInput.value;
-  userInfo.setUserInfo({
-    name: title,
-    job: description,
-  })
-  editFormPopup.close();
-}); */
 
 cardAddButton.addEventListener('click',() => {
   addFormValidator.resetValidation();
   addFormPopup.open();
 });
-/*
-cardAddForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const name = e.target.title.value;
-  const link = e.target.link.value;	
-  const cardData = { name, link };
-  renderCard(cardData, cardListElement);
-  addFormPopup.close();
-  cardAddForm.reset();
-});
-*/
