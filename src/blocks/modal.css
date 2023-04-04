@@ -152,6 +152,21 @@
 	border: none;
 }
 
+.modal__delete-container {
+	position: relative;
+	background-color: #fff;
+	margin: auto;
+	border-radius: 10px;
+	width: 430px;
+	height: 181px;
+}
+
+.modal__text-delete {
+	margin-bottom: 38px;
+}
+
+
+
 
 @media screen and (min-width: 320px) and (max-width: 660px) {
 	.modal__heading {

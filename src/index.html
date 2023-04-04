@@ -116,6 +116,35 @@
 					<button class="modal__close" id="card-image-close"></button>
 				</div>
 			</div>
+            
+		    <div class="modal" id="profile-image-edit-modal">
+			  <div class="modal__container" id="profile-image-edit-container">
+				<button class="modal__close" id="profile-image-edit-close"></button>
+				<p class="modal__heading">Change profile picture</p>
+				<form class="modal__form" id="profile-image-form" novalidate>
+					<input
+					  class="modal__form-input"
+					  id="profile-image-link"
+					  type="url"
+					  name="avatar"
+					  placeholder="Profile Picture Link"
+					  required
+					/>
+					<span class="modal__error" id="profile-image-link-error"></span>
+					<button class="modal__button">Save</button>
+				</form>
+			  </div>
+			</div>
+            
+			<div class="modal" id="delete-confirm-modal">
+			  <div class="modal__container" id="delete-confirm-container">
+				<button class="modal__close" id="delete-confirm-close"></button>
+				<p class="modal__heading">Are you sure?</p>
+				<form class="modal__form" id="delete-confirm-form" novalidate>
+					<button class="modal__button" id="delete-confirm-button">Yes</button>
+				</form>
+			  </div>
+			</div> 
 
 		<template id="card-template">
 			<li class="card" id="card">
@@ -129,6 +158,7 @@
 				<div class="card__description">
 					<h2 class="card__title" id="card-title"></h2>
 					<button class="card__like-button" type="button"></button>
+					<p class="card__likes-counter"></p>
 				</div>
 			</li>
 		</template>

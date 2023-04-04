@@ -1,54 +1,22 @@
-export const initialCards = [
-	{
-		name: "Yosemite Valley",
-		link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
-	
-	},
-	{
-		name: "Lake Louise",
-		link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lake-louise.jpg",
+export const options = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__form-input",
+  submitButtonSelector: ".modal__button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErroClass: "modal__error_input_type",
+  errorClas: "modal__error_visible",
+}
 
-	},
-	{
-		name: "Bald Mountains",
-		link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/bald-mountains.jpg",
-	
-	},
-	{
-		name: "Latemar",
-		link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/latemar.jpg",
-	
-	},
-	{
-		name: "Vanoise National Park",
-		link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/vanoise.jpg",
-	
-	},
-	{
-		name: "Lago di Braies",
-		link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
-	}
-];
-
-export const profileEditButton = document.querySelector('#profile-edit-button');
-export const profileEditModal = document.querySelector('#profile-edit-modal'); 
-export const profileCloseButton = document.querySelector('#modal-close-button');
-export const profileTitleInput = document.querySelector('#profile-title-input');
-export const profileDescriptionInput = document.querySelector ('#profile-description-input');
+export const profileEditButton = document.querySelector(".profile__edit-button");
+export const profileEditModal = document.querySelector("#profile-edit-modal");
+export const profileTitle = document.querySelector(".profile__title");
+export const profileDescription = document.querySelector(".profile__description");
+export const profileTitleInput = document.querySelector("#profile-title-input");
+export const profileDescriptionInput = document.querySelector("#profile-description-input");
 
 export const cardAddModal = document.querySelector("#card-add-modal");
-export const cardAddButton = document.querySelector("#profile-add-button");
+export const cardAddButton = document.querySelector(".profile__add-button");
 
-export const cardCloseButton = cardAddModal.querySelector('#card-add-close');
-
-export const profileEditForm = profileEditModal.querySelector('#profile-edit-form');
-export const cardListElement = document.querySelector('.cards__list');
-
-export const cardAddForm = cardAddModal.querySelector("#card-add-form");
-
-export const cardImageModal = document.querySelector("#card-image-modal");
-export const cardImageModalClose = document.querySelector("#card-image-close");
-
-export const modals = document.querySelectorAll('.modal');
-
-export const cardSelector = "#card-template";
+export const avatarEditModal = document.querySelector("#profile-image-edit-modal");
+export const profileAvatar = document.querySelector(".profile__image");
+export const avatarButton = document.querySelector(".profile__avatar-edit");
