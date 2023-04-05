@@ -9,7 +9,7 @@ export default class Card {
     loadingLikeCheck,
   ) {
     this._name = data.name;
-    this._linke = data.link;
+    this._link = data.link;
     this._id = data._id;
     this._likes = data.likes;
     this._cardSelector = cardSelector;
