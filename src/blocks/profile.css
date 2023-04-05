@@ -12,6 +12,26 @@
 	object-fit: cover;
 	background-position: center;
 	margin-right: 24px;
+	opacity: 1;
+}
+
+.profile__image:hover{
+	opacity: 0.6;
+}
+
+.profile__image-edit {
+	background: transparent url(../images/edit-profile-image.svg) center no-repeat;
+	position: absolute;
+    height: 26px;
+	width: 26px;
+	border: none;
+	left: 45px;
+	grid-area: button;
+}
+
+.profile__image-edit:hover{
+	cursor: pointer;
+	visibility: visible;
 }
 
 .profile__info {
@@ -70,37 +90,6 @@
 	opacity: 0.6;
 }
 
-.profile__avatar {
-	height: 120px;
-	width: 120px;
-	border-radius: 50%;
-	object-fit: cover;
-	background-position: center;
-	margin-right: 26px;
-	opacity: 1;
-}
-
-.profile__avatar-edit {
-	background: transparent url(../images/edit-profile-image.svg) center no-repeat;
-	position: absolute;
-    height: 26px;
-	width: 26px;
-	cursor: pointer;
-	border: none;
-	top: 80px;
-	left: 47px;
-	visibility: hidden;
-}
-
-.profile__avatar-container:hover {
-	opacity: 0.8;
-}
-
-.profile__avatar-edit:hover {
-	visibility: visible;
-	transition: opacity 0.3s linear;
-}
-
 @media screen and (min-width: 320px) and (max-width: 760px) {
 	.profile {
 		flex-direction: column;
@@ -148,12 +137,8 @@
 		margin-left: 19px;
 	}
 
-	.profile__avatar {
+	.profile__image {
 		margin-right: 0;
-	}
-
-	.profile__avatar-edit {
-		margin-left: 80px;
 	}
 }
 

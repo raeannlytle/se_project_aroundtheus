@@ -23,7 +23,7 @@ import {
 } from "../utils/constants.js";
 
 const api = new Api({
-  baseUrl: "https://around.nomoreparties.co/v1/group-12/",
+  baseUrl: "https://around.nomoreparties.co/v1/group-12",
   headers: {
     authorization: "f3893e14-4f9e-48a1-abc0-0d253e595072",
     "Content-Type": "application/json",

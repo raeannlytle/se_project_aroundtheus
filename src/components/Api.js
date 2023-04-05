@@ -45,6 +45,7 @@ export default class Api {
       body: JSON.stringify(cardData),
     }).then(this._checkResponse);
   }
+  
 
   addCardLikes(cardId) {
     return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
