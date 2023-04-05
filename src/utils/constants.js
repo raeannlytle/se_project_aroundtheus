@@ -19,4 +19,4 @@ export const cardAddButton = document.querySelector(".profile__add-button");
 
 export const avatarEditModal = document.querySelector("#profile-image-edit-modal");
 export const profileAvatar = document.querySelector(".profile__image");
-export const avatarButton = document.querySelector(".profile__avatar-edit");
+export const avatarButton = document.querySelector(".profile__image-edit");
