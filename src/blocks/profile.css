@@ -16,22 +16,8 @@
 }
 
 .profile__image:hover{
-	opacity: 0.6;
-}
-
-.profile__image-edit {
-	background: transparent url(../images/edit-profile-image.svg) center no-repeat;
-	position: absolute;
-    height: 26px;
-	width: 26px;
-	border: none;
-	left: 45px;
-	grid-area: button;
-}
-
-.profile__image-edit:hover{
-	cursor: pointer;
 	visibility: visible;
+	opacity: 0.3;
 }
 
 .profile__info {
@@ -88,6 +74,21 @@
 
 .profile__add-button:hover {
 	opacity: 0.6;
+}
+
+.profile__image-edit {
+	background: transparent url(../images/edit-profile-image.svg) center no-repeat;
+	position: absolute;
+    height: 26px;
+	width: 26px;
+	border: none;
+	left: 45px;
+	cursor: pointer;
+	visibility: visible;
+}
+
+.profile__image-edit:hover{
+	visibility: visible;
 }
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
