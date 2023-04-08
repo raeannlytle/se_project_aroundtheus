@@ -6,7 +6,7 @@ export default class Card {
     handleCardClick,
     handleDeleteClick,
     handleLikeClick,
-    loadingLikeCheck,
+    loadingLikeCheck
   ) {
     this._name = data.name;
     this._link = data.link;
@@ -66,11 +66,7 @@ export default class Card {
   }
 
   checkCardLikeState() {
-    if (this._likeButton.classList.contains("card__like-button_active")) {
-      return true;
-    } else {
-      return false;
-    }
+    return this._likes.some(like => like._id === this._userId);
   }
 
   getView() {
