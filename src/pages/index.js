@@ -150,14 +150,6 @@ function createCard(cardData) {
           });
       }
     },
-
-    (cardData) => {
-      cardData.forEach((cardObject) => {
-        if (cardObject._id === userId) {
-          card.addCardLike();
-        }
-      });
-    }
   );
   return card;
 }

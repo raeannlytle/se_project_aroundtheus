@@ -82,7 +82,6 @@ export default class Card {
     this._imageModal = this._cardElement.querySelector("#card-image-modal");
 
     this._cardLikes = this._cardElement.querySelector(".card__likes-counter");
-    this._loadingLikeCheck(this._likes, this._likeButton);
     this._cardLikes.textContent = this._likes.length;
 
     if (this._userId != this._userCardOwnerId) {
