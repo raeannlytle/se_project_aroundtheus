@@ -36,6 +36,15 @@
 	height: 330px;
 }
 
+.modal__container-delete {
+	background-color: #fff;
+	margin: auto;
+	padding: 36px;
+	border-radius: 10px;
+	position: relative;
+	width: 430px;
+}
+
 .modal__close {
 	width: 40px;
 	height: 40px;
