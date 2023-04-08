@@ -75,7 +75,7 @@ profilePopup.setEventListeners();
 avatarButton.addEventListener("click", () => avatarPopup.open());
 
 const avatarPopup = new PopupWithForm("#profile-image-edit-modal", (values) => {
-  avatarPopup.isLoadingButtonState(true);
+  avatarPopup.renderLoading(true);
   api
     .updateProfileAvatar(values.avatar)
     .then((data) => {
@@ -86,7 +86,7 @@ const avatarPopup = new PopupWithForm("#profile-image-edit-modal", (values) => {
       console.log(err);
     })
     .finally(() => {
-      avatarPopup.isLoadingButtonState(false, "Save");
+      avatarPopup.renderLoading(false, "Save");
     });
 });
 
