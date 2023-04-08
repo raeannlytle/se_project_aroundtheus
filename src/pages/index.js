@@ -55,7 +55,7 @@ function openProfileEditForm() {
 profileEditButton.addEventListener("click", openProfileEditForm);
 
 const profilePopup = new PopupWithForm("#profile-edit-modal", (values) => {
-  profilePopup.isLoadingButtonState(true);
+  profilePopup.renderLoading(true);
   api
     .updateProfileInfo(values)
     .then((data) => {
@@ -63,7 +63,7 @@ const profilePopup = new PopupWithForm("#profile-edit-modal", (values) => {
       profilePopup.close();
     })
     .finally(() => {
-      profilePopup.isLoadingButtonState(false, "Save");
+      profilePopup.renderLoading(false, "Save");
     });
 });
 
@@ -166,7 +166,7 @@ api
   });
 
 const addCardPopup = new PopupWithForm("#card-add-modal", (values) => {
-  addCardPopup.isLoadingButtonState(true);
+  addCardPopup.renderLoading(true);
   api
     .addNewCard(values)
     .then((cardData) => {
