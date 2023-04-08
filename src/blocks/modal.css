@@ -103,11 +103,11 @@
 }
 
 
-.modal__form-input::placeholder::placeholder {
+.modal__form-input::placeholder {
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 17px;
-	color: #000;
+	color: #c4c4c4;
 }
 
 .modal__button {
