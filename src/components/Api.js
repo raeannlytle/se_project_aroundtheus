@@ -34,15 +34,30 @@ export default class Api {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: this._headers,
-      body: JSON.stringify(userData),
+      body: JSON.stringify({
+        name: userData.name,
+        about: userData.about,
+      }),
     }).then(this._checkResponse);
   }
 
   addNewCard(cardData) {
+    debugger;
+    console.log(cardData);
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
       headers: this._headers,
-      body: JSON.stringify(cardData),
+      body: JSON.stringify({
+        title: cardData.title,
+        link: cardData.link,
+      }),
+    }).then(this._checkResponse);
+  }
+
+  deleteUserCard(cardId) {
+    return fetch(`${this._baseUrl}/cards/${cardId}`, {
+      method: "DELETE",
+      headers: this._headers,
     }).then(this._checkResponse);
   }
   

@@ -102,8 +102,8 @@ function createCard(cardData) {
     cardData,
     userId,
     '#card-template',
-    (cardName, cardLink) => {
-      previewPopup.open(cardName, cardLink);
+    (cardTitle, cardLink) => {
+      previewPopup.open(cardTitle, cardLink);
     },
 
     (cardId) => {
@@ -169,8 +169,8 @@ const addCardPopup = new PopupWithForm("#card-add-modal", (values) => {
   addCardPopup.isLoadingButtonState(true);
   api
     .addNewCard(values)
-    .then((data) => {
-      const addCard = createCard(data);
+    .then((cardData) => {
+      const addCard = createCard(cardData);
       addCardPopup.close();
       cardSection.addItem(addCard.getView());
     })
