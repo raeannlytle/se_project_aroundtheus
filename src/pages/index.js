@@ -33,8 +33,8 @@ const api = new Api({
 const editFormValidator = new FormValidator(options, profileEditModal);
 editFormValidator.enableValidation();
 
-const addFormValidator = new FormValidator(options, cardAddModal);
-addFormValidator.enableValidation();
+const addCardValidator = new FormValidator(options, cardAddModal);
+addCardValidator.enableValidation();
 
 const avatarFormValidator = new FormValidator(options, avatarEditModal);
 avatarFormValidator.enableValidation();
@@ -102,8 +102,8 @@ function createCard(cardData) {
     cardData,
     userId,
     '#card-template',
-    (cardTitle, cardLink) => {
-      previewPopup.open(cardTitle, cardLink);
+    (cardName, cardLink) => {
+      previewPopup.open(cardName, cardLink);
     },
 
     (cardId) => {

@@ -41,16 +41,13 @@ export default class Api {
     }).then(this._checkResponse);
   }
 
-  addNewCard(cardData) {
+  addNewCard({ name, link }) {
     debugger;
-    console.log(cardData);
+    console.log({ name, link });
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
       headers: this._headers,
-      body: JSON.stringify({
-        title: cardData.title,
-        link: cardData.link,
-      }),
+      body: JSON.stringify({ name, link}),
     }).then(this._checkResponse);
   }
 
