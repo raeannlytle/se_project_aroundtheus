@@ -42,8 +42,6 @@ export default class Api {
   }
 
   addNewCard({ name, link }) {
-    debugger;
-    console.log({ name, link });
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
       headers: this._headers,
@@ -74,6 +72,8 @@ export default class Api {
   }
 
   updateProfileAvatar(avatar) {
+    debugger;
+    console.log(avatar);
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,

@@ -69,6 +69,8 @@ const profilePopup = new PopupWithForm("#profile-edit-modal", (values) => {
 
 profilePopup.setEventListeners();
 
+avatarButton.addEventListener("click", () => avatarPopup.open());
+
 const avatarPopup = new PopupWithForm("#profile-image-edit-modal", (values) => {
   avatarPopup.isLoadingButtonState(true);
   api
@@ -80,11 +82,9 @@ const avatarPopup = new PopupWithForm("#profile-image-edit-modal", (values) => {
     .finally(() => {
       avatarPopup.isLoadingButtonState(false, "Save");
     });
-
-  avatarButton.addEventListener("click", () => avatarPopup.open());
-
-  avatarPopup.setEventListeners();
 });
+
+avatarPopup.setEventListeners();
 
 
 const previewPopup = new PopupWithImage("#card-image-modal");
