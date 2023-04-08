@@ -62,6 +62,9 @@ const profilePopup = new PopupWithForm("#profile-edit-modal", (values) => {
       userInfo.setUserInfo(data);
       profilePopup.close();
     })
+    .catch((err) => {
+      console.log(err);
+    })
     .finally(() => {
       profilePopup.renderLoading(false, "Save");
     });
@@ -78,6 +81,9 @@ const avatarPopup = new PopupWithForm("#profile-image-edit-modal", (values) => {
     .then((data) => {
       userInfo.setUserInfo(data);
       avatarPopup.close();
+    })
+    .catch((err) => {
+      console.log(err);
     })
     .finally(() => {
       avatarPopup.isLoadingButtonState(false, "Save");
@@ -114,6 +120,9 @@ function createCard(cardData) {
           .then(() => {
             card.deleteCard();
             deleteCardPopup.close();
+          })
+          .catch((err) => {
+            console.log(err);
           });
       });
     },
@@ -125,6 +134,9 @@ function createCard(cardData) {
           .then((data) => {
             card.removeCardLike();
             card.setLikesCounter(data.likes.length);
+          })
+          .catch((err) => {
+            console.log(err);
           });
       } else {
         api 
@@ -132,6 +144,9 @@ function createCard(cardData) {
           .then((data) => {
             card.addCardLike();
             card.setLikesCounter(data.likes.length);
+          })
+          .catch((err) => {
+            console.log(err);
           });
       }
     },
@@ -173,6 +188,9 @@ const addCardPopup = new PopupWithForm("#card-add-modal", (values) => {
       const addCard = createCard(cardData);
       addCardPopup.close();
       cardSection.addItem(addCard.getView());
+    })
+    .catch((err) => {
+      console.log(err);
     })
     .finally(() => {
       addCardPopup.renderLoading(false, "Create");
