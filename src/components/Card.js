@@ -43,10 +43,6 @@ export default class Card {
     })
   }
 
-  _handleCardLike() {
-    this._likeButton.classList.toggle("card__like-button_active");
-  }
-
   _handleImageClick() {
     this._handleCardClick(this._name, this._link);
   }

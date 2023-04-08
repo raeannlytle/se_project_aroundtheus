@@ -126,6 +126,10 @@
 	opacity: 0.8;
 }
 
+.modal__button_disabled:hover {
+	opacity: 1;
+}
+
 .modal__container-card {
 	position: relative;
 }
