@@ -33,8 +33,8 @@ const api = new Api({
 const editFormValidator = new FormValidator(options, profileEditModal);
 editFormValidator.enableValidation();
 
-const addCardValidator = new FormValidator(options, cardAddModal);
-addCardValidator.enableValidation();
+const addFormValidator = new FormValidator(options, cardAddModal);
+addFormValidator.enableValidation();
 
 const avatarFormValidator = new FormValidator(options, avatarEditModal);
 avatarFormValidator.enableValidation();
