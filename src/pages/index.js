@@ -175,7 +175,7 @@ const addCardPopup = new PopupWithForm("#card-add-modal", (values) => {
       cardSection.addItem(addCard.getView());
     })
     .finally(() => {
-      addCardPopup.isLoadingButtonState(false, "Create");
+      addCardPopup.renderLoading(false, "Create");
     });
   });
   
