@@ -9,7 +9,7 @@ export default class UserInfo {
     return {
       name: this._userName.textContent,
       about: this._userDescription.textContent,
-      avatar: this._userAvatar,
+      avatar: this.getAvatar(),
     };
   }
 
@@ -18,5 +18,9 @@ export default class UserInfo {
     this._userDescription.textContent = value.about;
     this._userAvatar.alt = value.name;
     this._userAvatar.src = value.avatar;
+  }
+
+  getAvatar() {
+    return this._userAvatar.src;
   }
 }
