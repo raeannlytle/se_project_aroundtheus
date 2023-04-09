@@ -20,6 +20,11 @@ export default class UserInfo {
     this._userAvatar.src = value.avatar;
   }
 
+  setAvatar(value) {
+    this._userAvatar.alt = value.name;
+    this._userAvatar.src = value.avatar;
+  }
+
   getAvatar() {
     return this._userAvatar.src;
   }
