@@ -54,7 +54,7 @@ export default class Card {
 
   setLikesCounter(likes) {
     this._likes = likes;
-    this._cardLikes.textContent = likes;
+    this._cardLikes.textContent = likes.length;
   }
 
   addCardLike() {
