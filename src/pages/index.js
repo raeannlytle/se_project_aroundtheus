@@ -131,7 +131,7 @@ function createCard(cardData) {
     (cardId) => {
       if (card.checkCardLikeState()) {
         api
-          .removeCardLikes(cardId)
+          .renderLikes(cardId)
           .then((data) => {
             card.updateLikes(data.likes);
           })
@@ -140,7 +140,7 @@ function createCard(cardData) {
           });
       } else {
         api 
-          .addCardLikes(cardId)
+          .renderLikes(cardId)
           .then((data) => {
             card.updateLikes(data.likes);
           })
