@@ -122,12 +122,8 @@
 	cursor: pointer;
 }
 
-.modal__button:hover {
+.modal__button:hover:not(:disabled) {
 	opacity: 0.8;
-}
-
-.modal__button_disabled:hover {
-	opacity: 1;
 }
 
 .modal__container-card {
