@@ -52,7 +52,7 @@ export default class Card {
     this._cardElement = null;
   }
 
-  /* setLikesCounter() {
+  setLikesCounter() {
     this.renderLikes();
   }
 
@@ -60,8 +60,7 @@ export default class Card {
     this._likes = likes;
     this._cardLikes.textContent = likes.length;
   } 
-  */
-
+  
   addCardLike() {
     this._likeButton.classList.add("card__like-button_active");
   }
@@ -87,7 +86,7 @@ export default class Card {
     this._imageModal = this._cardElement.querySelector("#card-image-modal");
 
     this._cardLikes = this._cardElement.querySelector(".card__likes-counter");
-    //this.renderLikes(); 
+    this.renderLikes(); 
 
     if (this._userId != this._userCardOwnerId) {
       this._deleteButton.remove();
