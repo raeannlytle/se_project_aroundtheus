@@ -90,6 +90,7 @@ const avatarPopup = new PopupWithForm("#profile-image-edit-modal", (values) => {
     });
 });
 
+avatarFormValidator.disableButton();
 avatarPopup.setEventListeners();
 
 
@@ -190,7 +191,7 @@ const addCardPopup = new PopupWithForm("#card-add-modal", (values) => {
   });
   
 cardAddButton.addEventListener("click", () => {
-  addFormValidator.disableButton(".modal__button");
+  addFormValidator.disableButton();
   addCardPopup.open()
 });
 
