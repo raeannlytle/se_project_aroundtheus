@@ -113,20 +113,20 @@ function createCard(cardData) {
       previewPopup.open(cardName, cardLink);
     },
 
-    (cardId) => {
-      deleteCardPopup.open();
-      deleteCardPopup.setSubmitAction(() => {
+    (cardId) => { 
+      deleteCardPopup.open(); 
+      deleteCardPopup.setSubmitAction(() => { 
+        deleteCardPopup.renderLoading(true);
         api
           .deleteUserCard(cardId)
-          .then(() => {
-            card.deleteCard();
-            deleteCardPopup.close();
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      });
+          .then(() => { 
+            card.deleteCard(); 
+            deleteCardPopup.renderLoading(false);
+            deleteCardPopup.close(); 
+          }); 
+      }); 
     },
+    
 
     (cardId) => {
       if (card.checkCardLikeState()) {
