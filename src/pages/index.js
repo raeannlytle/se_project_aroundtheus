@@ -133,8 +133,7 @@ function createCard(cardData) {
         api
           .removeCardLikes(cardId)
           .then((data) => {
-            card.removeCardLike();
-            card.setLikesCounter(data.likes);
+            card.updateLikes(data.likes);
           })
           .catch((err) => {
             console.log(err);
@@ -143,8 +142,7 @@ function createCard(cardData) {
         api 
           .addCardLikes(cardId)
           .then((data) => {
-            card.addCardLike();
-            card.setLikesCounter(data.likes);
+            card.updateLikes(data.likes);
           })
           .catch((err) => {
             console.log(err);

@@ -52,22 +52,19 @@ export default class Card {
     this._cardElement = null;
   }
 
-  setLikesCounter() {
+  updateLikes(likes) {
+    this._likes = likes;
     this.renderLikes();
   }
 
-  renderLikes(likes) {
-    this._likes = likes;
-    this._cardLikes.textContent = likes.length;
+  renderLikes() {
+    this._cardLikes.textContent = this._likes.length;
+    if (this._userId = this._likes) {
+      this._likeButton.classList.add("card__like-button)active");
+    } else {
+      this._likeButton.classList.remove("card__like-button_active");
+    }
   } 
-  
-  addCardLike() {
-    this._likeButton.classList.add("card__like-button_active");
-  }
-
-  removeCardLike() {
-    this._likeButton.classList.remove("card__like-button_active");
-  }
 
   checkCardLikeState() {
     return this._likes.some(like => like._id === this._userId);
