@@ -134,7 +134,7 @@ function createCard(cardData) {
           .removeCardLikes(cardId)
           .then((data) => {
             card.removeCardLike();
-            card.setLikesCounter(data.likes.length);
+            card.setLikesCounter(data.likes);
           })
           .catch((err) => {
             console.log(err);
@@ -144,7 +144,7 @@ function createCard(cardData) {
           .addCardLikes(cardId)
           .then((data) => {
             card.addCardLike();
-            card.setLikesCounter(data.likes.length);
+            card.setLikesCounter(data.likes);
           })
           .catch((err) => {
             console.log(err);
