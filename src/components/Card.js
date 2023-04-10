@@ -66,7 +66,7 @@ export default class Card {
     }
   } 
 
-  checkCardLikeState() {
+  isLiked() {
     return this._likes.some(like => like._id === this._userId);
   }
 

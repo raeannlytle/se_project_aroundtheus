@@ -129,7 +129,7 @@ function createCard(cardData) {
     
 
     (cardId) => {
-      if (card.checkCardLikeState()) {
+      if (card.isLiked()) {
         api
           .removeCardLikes(cardId)
           .then((data) => {
