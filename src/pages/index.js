@@ -131,7 +131,7 @@ function createCard(cardData) {
     (cardId) => {
       if (card.checkCardLikeState()) {
         api
-          .renderLikes(cardId)
+          .removeCardLikes(cardId)
           .then((data) => {
             card.updateLikes(data.likes);
           })
@@ -140,7 +140,7 @@ function createCard(cardData) {
           });
       } else {
         api 
-          .renderLikes(cardId)
+          .addCardLikes(cardId)
           .then((data) => {
             card.updateLikes(data.likes);
           })
@@ -155,9 +155,10 @@ function createCard(cardData) {
 
 api 
   .getAPIInfo()
-  .then(([userData, userCards]) => {
+  .then(([userData, userCards], setAvatar) => {
     userId = userData._id;
     userInfo.setUserInfo(userData);
+    userInfo.setAvatar(profileAvatar);
     cardSection = new Section(
       {
         items: userCards,
