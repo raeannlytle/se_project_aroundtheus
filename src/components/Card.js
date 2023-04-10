@@ -60,7 +60,7 @@ export default class Card {
   renderLikes() {
     this._cardLikes.textContent = this._likes.length;
     if (this._userId.checkCardLikeState) {
-      this._likeButton.classList.add("card__like-button)active");
+      this._likeButton.classList.add("card__like-button_active");
     } else {
       this._likeButton.classList.remove("card__like-button_active");
     }
