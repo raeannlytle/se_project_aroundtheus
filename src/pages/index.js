@@ -91,7 +91,6 @@ const avatarPopup = new PopupWithForm("#profile-image-edit-modal", (values) => {
 });
 
 avatarFormValidator.disableButton();
-avatarPopup.setEventListeners();
 
 
 const previewPopup = new PopupWithImage("#card-image-modal");
@@ -155,10 +154,10 @@ function createCard(cardData) {
 
 api 
   .getAPIInfo()
-  .then(([userData, userCards], setAvatar) => {
+  .then(([userData, userCards]) => {
     userId = userData._id;
     userInfo.setUserInfo(userData);
-    userInfo.setAvatar(profileAvatar);
+    userInfo.setAvatar(userData.avatar);
     cardSection = new Section(
       {
         items: userCards,
