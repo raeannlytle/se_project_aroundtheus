@@ -71,7 +71,7 @@ const profilePopup = new PopupWithForm("#profile-edit-modal", (values) => {
 });
 
 profilePopup.setEventListeners();
-
+editFormValidator.disableButton();
 avatarButton.addEventListener("click", () => avatarPopup.open());
 
 const avatarPopup = new PopupWithForm("#profile-image-edit-modal", (values) => {
