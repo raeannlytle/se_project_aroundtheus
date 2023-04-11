@@ -90,6 +90,7 @@ const avatarPopup = new PopupWithForm("#profile-image-edit-modal", (values) => {
     });
 });
 
+avatarPopup.setEventListeners();
 avatarFormValidator.disableButton();
 
 
