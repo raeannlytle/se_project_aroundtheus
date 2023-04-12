@@ -170,6 +170,8 @@ api
       ".cards__list"
     );
     cardSection.renderItems();
+  })  .catch((err) => {
+    console.log(err);
   });
 
 const addCardPopup = new PopupWithForm("#card-add-modal", (values) => {
