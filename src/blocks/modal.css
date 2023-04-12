@@ -154,6 +154,17 @@
 	left: 0;
 }
 
+.modal__error-avatar {
+	font-weight: 400;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #ff0000;
+    margin-top: 5px;
+    margin-bottom: 13px;
+	position: absolute;
+	top: 170px;
+}
+
 .modal__error-visible {
 	display:block;
 }
