@@ -74,10 +74,10 @@ profilePopup.setEventListeners();
 editFormValidator.disableButton();
 avatarButton.addEventListener("click", () => avatarPopup.open());
 
-const avatarPopup = new PopupWithForm("#profile-image-edit-modal", (values) => {
+const avatarPopup = new PopupWithForm("#profile-image-edit-modal", (value) => {
   avatarPopup.renderLoading(true);
   api
-    .updateProfileAvatar(values.avatar)
+    .updateProfileAvatar(value.avatar)
     .then((value) => {
       userInfo.setAvatar(value.avatar);
       avatarPopup.close();
