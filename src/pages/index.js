@@ -78,8 +78,8 @@ const avatarPopup = new PopupWithForm("#profile-image-edit-modal", (values) => {
   avatarPopup.renderLoading(true);
   api
     .updateProfileAvatar(values.avatar)
-    .then((data) => {
-      userInfo.setAvatar(data);
+    .then((value) => {
+      userInfo.setAvatar(value.avatar);
       avatarPopup.close();
     })
     .catch((err) => {
